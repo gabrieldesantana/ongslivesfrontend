@@ -1,0 +1,182 @@
+﻿@model LoginModel
+
+@{
+    Layout = "_NoLayout";
+}
+
+<style>
+
+    * {
+        /* border: 1px solid #e21; */
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, sans-serif;
+        font-family: Verdana, sans-serif;
+    }
+
+    body {
+        background-color: #333333;
+        background-color: #FFD4F6;
+       /* height: 100vh;*/
+        width: 99vw;
+        position: relative;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        color: rgba(0,0,0,0.9);
+    }
+
+    .header {
+        /* width: 100vw;
+        height: 30px;
+        background-color:#515151; */
+        /* position: relative; */
+    }
+
+        .header .barra {
+            width: 99vw;
+            height: 30px;
+            background-color: #515151;
+            background-color: #f868d9;
+            background-color: #BD4D9E;
+            position: absolute;
+            top: 0px;
+            left: 0.5vw;
+        }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        padding: 20px;
+        gap: 20px;
+    }
+
+        .container .logo-login {
+            align-self: center;
+            width: 80px;
+            height: 80px;
+            margin: 40px 0px 40px 0px;
+            border-radius: 50%;
+        }
+
+        .container form {
+            padding: 20px;
+        }
+
+
+    .input-group1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px 0px;
+        position: relative;
+    }
+
+        .input-group1 .input {
+            padding: 10px 8px;
+            border-radius: 20px;
+            border: none;
+            background-color: #666666;
+            background-color: #80FF8C;
+            text-align: center;
+        }
+
+            .input-group1 .input::placeholder {
+                color: #fff;
+                color: rgba(0,0,0,0.9);
+            }
+
+        .input-group1 a {
+            display: block;
+            font-size: 12px;
+        }
+
+        .input-group1::before {
+            content: attr(placeholder);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            color: #ee0e0e;
+            pointer-events: none;
+        }
+
+    .container form .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 50px;
+    }
+
+        .container form .button-group .btn {
+            display: block;
+            padding: 12px 70px;
+            margin: 0px;
+            border-radius: 20px;
+            border: none;
+            background-color: #fff;
+            background-color: #80FF8C;
+            color: rgba(0,0,0,0.8);
+            cursor: pointer;
+        }
+
+        .container form .button-group a {
+            font-size: 12px;
+        }
+
+    /* .btn:hover {
+        background-color: #45a049;
+    } */
+
+
+
+</style>
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+<div class="header">
+    <span class="barra"></span>
+</div>
+
+<div class="container">
+    <img class="logo-login" src="~/img/logo-image.png" alt="logo">
+
+    <form asp-controller="Login" asp-action="Entrar">
+        <div class="input-group1">
+            <input class="input" type="text" asp-for="UsuarioLogin" id="username" placeholder="Username" required>
+            @Html.ValidationMessageFor(x => x.UsuarioLogin)
+            <input class="input" type="password" asp-for="UsuarioSenha" id="password" placeholder="Password" required>
+            @Html.ValidationMessageFor(x => x.UsuarioSenha)
+            <a href="">Esqueci minha senha</a>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn">Entrar</button>
+           @* <a asp-area="" asp-controller="Home" asp-action="Index" class="btn">Entrar</a>*@
+            <a href="">Cadastra-se agora</a>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,84 @@
+﻿@model ONGLIVES.API.Entidades.Experiencia
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Experiencia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdVoluntario" class="control-label"></label>
+                <input asp-for="IdVoluntario" class="form-control" />
+                <span asp-validation-for="IdVoluntario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdOng" class="control-label"></label>
+                <input asp-for="IdOng" class="form-control" />
+                <span asp-validation-for="IdOng" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeVoluntario" class="control-label"></label>
+                <input asp-for="NomeVoluntario" class="form-control" />
+                <span asp-validation-for="NomeVoluntario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeOng" class="control-label"></label>
+                <input asp-for="NomeOng" class="form-control" />
+                <span asp-validation-for="NomeOng" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjetoEnvolvido" class="control-label"></label>
+                <input asp-for="ProjetoEnvolvido" class="form-control" />
+                <span asp-validation-for="ProjetoEnvolvido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opiniao" class="control-label"></label>
+                <input asp-for="Opiniao" class="form-control" />
+                <span asp-validation-for="Opiniao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPostagem" class="control-label"></label>
+                <input asp-for="DataPostagem" class="form-control" />
+                <span asp-validation-for="DataPostagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataExperienciaInicio" class="control-label"></label>
+                <input asp-for="DataExperienciaInicio" class="form-control" />
+                <span asp-validation-for="DataExperienciaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataExperienciaFim" class="control-label"></label>
+                <input asp-for="DataExperienciaFim" class="form-control" />
+                <span asp-validation-for="DataExperienciaFim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CriadoEm" class="control-label"></label>
+                <input asp-for="CriadoEm" class="form-control" />
+                <span asp-validation-for="CriadoEm" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

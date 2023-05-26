@@ -1,0 +1,185 @@
+﻿@model IEnumerable<ONGLIVES.API.Entidades.Experiencia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="cssgsh1div">
+    <h1 class="cssgsh1">Experiencias</h1>
+</div>
+
+
+<style>
+    .cssgsbutton {
+        text-decoration: none;
+        padding: 10px 5px;
+        border: 1px solid #fff;
+        background-color: #e21;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .cssgsbuttoncreate {
+        text-decoration: none;
+        padding: 10px 5px;
+        border: 1px solid #fff;
+        background-color: #e21;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    .cssgsdivbutton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cssgstable 
+    {
+        background: #fff;
+        color: black;
+    }
+
+    .cssgsh1 {
+        text-align: center;
+    }
+
+    .cssgsh1div 
+    {
+    }
+
+    .cssgsbuttoncreatediv 
+    {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        display: none;
+    }
+</style>
+
+<div class="cssgsbuttoncreatediv">
+    <a class="cssgsbuttoncreate" asp-action="Create">Create New</a>
+</div>
+<table class="table cssgstable">
+    <thead>
+        <tr>
+@*            <th>
+                @Html.DisplayNameFor(model => model.IdVoluntario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdOng)
+            </th>*@
+            <th>
+                @*@Html.DisplayNameFor(model => model.NomeVoluntario)*@
+                Voluntário
+            </th>
+            <th>
+               @* @Html.DisplayNameFor(model => model.NomeOng)*@
+               Ong
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ProjetoEnvolvido)*@
+                Projeto
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.Opiniao)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DataPostagem)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.DataExperienciaInicio)*@
+                Data Inicio
+            </th>
+            <th>
+               @* @Html.DisplayNameFor(model => model.DataExperienciaFim)*@
+                Data Fim
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.CriadoEm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actived)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.IdVoluntario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdOng)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeVoluntario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeOng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjetoEnvolvido)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.Opiniao)
+            </td>*@
+            <td>
+@*                @Html.DisplayFor(modelItem => item.DataPostagem)*@
+                  <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataPostagem)" disabled>
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.DataExperienciaInicio)*@
+                    <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataExperienciaInicio)" disabled>
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.DataExperienciaFim)*@
+                    <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataExperienciaFim)" disabled>
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.CriadoEm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actived)
+            </td>*@
+            <td>
+                <div class="cssgsdivbutton">
+                <a class="cssgsbutton" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="cssgsbutton" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="cssgsbutton" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Primeiro</th>
+            <th scope="col">Último</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+        </tr>
+    </tbody>
+</table>

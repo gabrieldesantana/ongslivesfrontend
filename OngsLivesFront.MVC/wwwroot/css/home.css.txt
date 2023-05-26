@@ -1,0 +1,8 @@
+﻿.corpo {
+    /*background-image: url("imagens/LogoFull.png");*/
+    background-image: url("");
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}

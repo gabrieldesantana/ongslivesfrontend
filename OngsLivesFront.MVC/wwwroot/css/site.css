@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+/*    background-image: url('../img/background_general.jpg');
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;*/
+}
+/*    background-image: url('../img/background_home.png');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top 200px;*/
+}
+
+
+.corpo {
+
+/*    background-image: url('../img/background_home.png');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;*/
+}

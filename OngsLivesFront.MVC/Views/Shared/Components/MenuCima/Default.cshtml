@@ -1,0 +1,10 @@
+﻿@model Usuario
+
+<header class="cabeca">
+    <nav class="cabecaEsquerda">
+    </nav>
+    <nav class="cabecaDireita">
+        <a class="centralCliente" asp-controller="Home" asp-action="Index">@Model.Nome</a>
+        <a class="centralCliente" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+    </nav>
+</header>
