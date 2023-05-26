@@ -59,10 +59,12 @@ namespace OngsLivesFront.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdVoluntario,IdOng,Tipo,Turno,Descricao,Habilidade,DataInicio,DataFim,CriadoEm,Id,Actived")] Vaga vaga)
+        public async Task<IActionResult> Create([Bind("IdVoluntario,IdOng,Tipo,Turno,Descricao,Habilidade,DataInicio,DataFim,Id")] Vaga vaga)
         {
             if (ModelState.IsValid)
             {
+                vaga.Actived = true;
+                vaga.CriadoEm = DateTime.Now;
                 _context.Add(vaga);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

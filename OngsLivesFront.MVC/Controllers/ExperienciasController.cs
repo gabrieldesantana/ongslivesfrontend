@@ -64,10 +64,14 @@ namespace OngsLivesFront.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdVoluntario,IdOng,NomeVoluntario,NomeOng,ProjetoEnvolvido,Opiniao,DataPostagem,DataExperienciaInicio,DataExperienciaFim,CriadoEm,Id,Actived")] Experiencia experiencia)
+        public async Task<IActionResult> Create([Bind("IdVoluntario,IdOng,NomeVoluntario,NomeOng,ProjetoEnvolvido,Opiniao,DataExperienciaInicio,DataExperienciaFim,Id")] Experiencia experiencia)
         {
             if (ModelState.IsValid)
             {
+                experiencia.CriadoEm = DateTime.Now;
+                experiencia.Actived = true;
+                experiencia.DataPostagem = DateTime.Now;
+
                 _context.Add(experiencia);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -111,6 +115,7 @@ namespace OngsLivesFront.MVC.Controllers
             {
                 try
                 {
+
                     _context.Update(experiencia);
                     await _context.SaveChangesAsync();
                 }

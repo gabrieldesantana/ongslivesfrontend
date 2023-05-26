@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<ONGLIVES.API.Entidades.Experiencia>
-
+@{
+    Layout = "_Layout2";
+}
 @{
     ViewData["Title"] = "Index";
 }
@@ -57,6 +59,10 @@
         display: none;
     }
 </style>
+
+<p>
+<a asp-action="Create">Create New</a>
+</p>
 
 <div class="cssgsbuttoncreatediv">
     <a class="cssgsbuttoncreate" asp-action="Create">Create New</a>
@@ -153,33 +159,5 @@
             </td>
         </tr>
 }
-    </tbody>
-</table>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Primeiro</th>
-            <th scope="col">Último</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
     </tbody>
 </table>

@@ -54,10 +54,11 @@ namespace OngsLivesFront.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,Login,Email,Perfil,Senha,Id,Actived")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Nome,Login,Email,Perfil,Senha,Id")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
+                usuario.Actived = true;
                 usuario.CriadoEm = DateTime.Now;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();

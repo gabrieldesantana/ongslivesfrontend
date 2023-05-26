@@ -60,7 +60,7 @@ namespace OngsLivesFront.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdOng,Tipo,Data,Valor,Origem,CriadoEm,Id,Actived")] OngFinanceiro ongFinanceiro)
+        public async Task<IActionResult> Create([Bind("IdOng,Tipo,Data,Valor,Origem,Id")] OngFinanceiro ongFinanceiro)
         {
             if (ModelState.IsValid)
             {

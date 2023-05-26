@@ -44,15 +44,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
+                <input type="date" asp-for="DataInicio" class="form-control" />
                 <span asp-validation-for="DataInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
+                <input type="date" asp-for="DataFim" class="form-control" />
                 <span asp-validation-for="DataFim" class="text-danger"></span>
             </div>
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="CriadoEm" class="control-label"></label>
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
@@ -61,7 +61,7 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)
                 </label>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -6,3 +6,9 @@
 $(document).ready(function () {
     $('#tabelaVoluntario').DataTable();
 });
+
+
+window.addEventListener('DOMContentLoaded', function () {
+    var loadingOverlay = document.getElementById('loading-overlay');
+    loadingOverlay.style.display = 'none';
+});
