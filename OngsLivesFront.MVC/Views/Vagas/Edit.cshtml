@@ -1,4 +1,4 @@
-﻿@model ONGLIVES.API.Entidades.Vaga
+﻿@model Vaga
 
 @{
     ViewData["Title"] = "Edit";
@@ -42,6 +42,13 @@
                 <input asp-for="Habilidade" class="form-control" />
                 <span asp-validation-for="Habilidade" class="text-danger"></span>
             </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Disponivel" /> @Html.DisplayNameFor(model => model.Disponivel)
+                </label>
+            </div>
+
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
                 <input asp-for="DataInicio" class="form-control" />
@@ -52,17 +59,21 @@
                 <input asp-for="DataFim" class="form-control" />
                 <span asp-validation-for="DataFim" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+@*            <div class="form-group">
                 <label asp-for="CriadoEm" class="control-label"></label>
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
-            </div>
+            </div>*@
+
             <input type="hidden" asp-for="Id" />
+
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)
                 </label>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -74,6 +85,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+*@

@@ -1,68 +1,259 @@
-﻿@using OngsLivesFront.MVC.Models.Enums
-@model Usuario
+﻿@model Usuario
+@using OngsLivesFront.MVC.Models.Enums
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "_Layout_cadastro";
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        background: rgb(222, 138, 172);
+    }
 
-<h4>Usuario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Login" class="control-label"></label>
-                <input asp-for="Login" class="form-control" />
-                <span asp-validation-for="Login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
+    h1 {
+        text-align: center;
+        color: #eee1e1;
+    }
 
-            <div class="form-group">
-@*                <label asp-for="Perfil" class="control-label"></label>
-                <select asp-for="Perfil" class="form-control"></select>
-                <span asp-validation-for="Perfil" class="text-danger"></span>*@
-                <label for="nome" class="form-label">Perfil</label>
-                <select asp-for="Perfil" class="form-control">
-                    <option value="">Selecione</option>
-                    <option value="@EPerfilUsuario.Admin">Administrador</option>
-                    <option value="@EPerfilUsuario.Voluntario">Voluntario</option>
-                    <option value="@EPerfilUsuario.Ong">Ong</option>
-                </select>
-            </div>
+    form {
+        background: rgb(228, 161, 188);
+        margin: auto;
+        max-width: 600px;
+        padding: 25px;
+        border: 1px solid #aaa0a0cb;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    }
 
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input type="password" asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div
-@*            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)
-                </label>
-            </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    label {
+        display: inline-block;
+        width: 150px;
+    }
+
+    input[type="text"], select, input[type=number]{
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input[type="password"] 
+    {
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input[type="email"], select {
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(188, 288, 161);
+        color: rgba(20, 20, 20, 0.692);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+        input[type="submit"]:hover {
+            background-color: rgb(161, 288, 228);
+        }
+
+    .cadastrar-btn {
+        display: grid;
+    }
+
+    footer {
+        color: blue;
+        text-align: center;
+        font-style: italic;
+    }
+
+/*    input[type="text"][id="cpf"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        text-align: left;
+    }*/
+
+/*        input[type="text"][id="cpf"]:focus {
+            border-color: #4CAF50;
+        }
+
+        input[type="text"][id="cpf"][required]:invalid {
+            
+        }*/
+/*
+        input[type="text"][id="cpf"]::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]::-moz-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]:-ms-input-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]:-moz-placeholder {
+            color: #999;
+        }
+
+    input[type="text"][id="cpf"] {
+        letter-spacing: 0.01em;
+    }
+
+        input[type="text"][id="cpf"]::-webkit-outer-spin-button,
+        input[type="text"][id="cpf"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    input[type="text"][id="cpf"] {
+        -moz-appearance: textfield;
+    }
+
+    #email-validation::before {
+        content: "✘";
+        color: red;
+        margin-left: -150px;
+    }
+
+    #email-validation.valid::before {
+        content: "✔";
+        color: green;
+    }*/
+</style>
+
+
+
+<h1>Cadastro de Usuário</h1>
+<form asp-action="Create" class="formularioOng">
+
+
+    <div class="form-group">
+        <input asp-for="Nome" type="text" placeholder="Nome" required />
+        <span asp-validation-for="Nome" class="text-danger"></span>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <div class="form-group">
+        <input asp-for="Login" type="text" placeholder="Login" required />
+        <span asp-validation-for="Login" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="password" id="senha1" class="form-control" asp-for="Senha" placeholder="Digite sua senha" required onblur="validarSenhas()  />
+         <span asp-validation-for="Senha" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="password" id="senha2" class="form-control" placeholder="Confirme sua senha" required onblur="validarSenhas()" />
+        <span id="valida-senha-texto" style="color:#000; background-color:#fff"></span>
+        <span id="valida-senha-igual-texto" style="color:#000; background-color:#fff"></span>
+    </div>
+
+    <div class="form-group">
+        <select asp-for="Perfil" class="form-control">
+            <option value="">Selecione</option>
+            <option value="@EPerfilUsuario.Admin">Administrador</option>
+            <option value="@EPerfilUsuario.Voluntario">Voluntario</option>
+            <option value="@EPerfilUsuario.Ong">Ong</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder="E-mail">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <div class="cadastrar-btn">
+            <input type="submit" id="btn" value="Cadastrar">
+        </div>
+     </div>
+
+
+</form>
+
+<script>
+    //Nome, Login, Email, Perfil, Senha, Senha2
+
+    function validarSenhas() 
+    {
+
+        var senha1 = document.getElementById('senha1').value;
+        var senha2 = document.getElementById('senha2').value;
+        var textoValidacao = document.getElementById('valida-senha-texto')
+        var textoValidacaoIgual = document.getElementById('valida-senha-igual-texto')
+
+        if (senha1 == "" || senha2 == "") {
+            console.log() //senha vazia
+        }
+        else {
+
+        if (senha1 != senha2) 
+        {
+            textoValidacao.innerHTML = "";
+            textoValidacaoIgual.innerHTML = "";
+            textoValidacaoIgual.innerHTML = "Senhas não correspondem";
+            return;
+        }
+
+        if (senha1 == senha2)
+        {
+            textoValidacaoIgual.innerHTML = "";
+        }
+
+        // Expressão regular para validar a senha
+        var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+
+        var validacao1 = "8 caracteres ou mais [+8]"
+        var validacao2 = "Incluir uma letra maiscula [A-Z]"
+        var validacao3 = "Incluir uma letra minuscula [a-z]"
+        var validacao4 = "Incluir um número [0-9]";
+
+
+        if (!regex.test(senha1)) {
+
+                textoValidacao.innerHTML = "";
+                textoValidacaoIgual.innerHTML = "";
+                textoValidacao.innerHTML += "Sua senha deve conter:" + '<br>' + validacao1 + '<br>' + validacao2 + '<br>' + validacao3 + '<br>' + validacao4;
+            return;
+        }
+
+         if (regex.test(senha1)) {
+
+                textoValidacao.innerHTML = "";
+                textoValidacaoIgual.innerHTML = "";
+            return;
+        }
+
+        }
+    }
+
+</script>

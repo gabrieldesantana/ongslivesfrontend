@@ -14,7 +14,14 @@ namespace OngsLivesFront.MVC.ViewComponents
 
             Usuario usuario = JsonConvert.DeserializeObject<Usuario>(sessaoUsuario);
 
-            return View(usuario);
+            //return View(usuario);
+
+            CadastroModel cadastroModel = new CadastroModel();
+            cadastroModel.Usuario = usuario;
+            cadastroModel.Voluntario = new Voluntario("", "", DateTime.Now, "", "", "", "", "", 0, 0, 0, new Endereco());
+            cadastroModel.Ong = new Ong("", "", "", "", "", 0, new Endereco());
+
+            return View(cadastroModel);
         }
     }
 }

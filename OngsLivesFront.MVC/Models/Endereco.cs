@@ -1,13 +1,26 @@
 using System.Text.Json.Serialization;
 
-namespace ONGLIVES.API.Entidades
+namespace OngsLivesFront.MVC.Models
 {
     public class Endereco
     {
         public Endereco()
         {
         }
-        
+
+        public Endereco(string? enderecoLinha, int numero, string? cep, string? bairro, string? cidade, string? estado, string? pais, string? latitude, string? longitude)
+        {
+            EnderecoLinha = enderecoLinha;
+            Numero = numero;
+            Cep = cep;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Pais = pais;
+            Latitude = latitude;
+            Longitude = longitude;
+        }
+
         [JsonIgnore]
         public int Id { get; set; }
         public string? EnderecoLinha { get; set; }

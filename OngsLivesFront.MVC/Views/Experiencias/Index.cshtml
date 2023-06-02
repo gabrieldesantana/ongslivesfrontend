@@ -1,163 +1,259 @@
-﻿@model IEnumerable<ONGLIVES.API.Entidades.Experiencia>
+﻿@model IEnumerable<Experiencia>
 @{
-    Layout = "_Layout2";
+    Layout = "_Layout_OnlyCima";
 }
-@{
+@*@{
     ViewData["Title"] = "Index";
-}
-<div class="cssgsh1div">
-    <h1 class="cssgsh1">Experiencias</h1>
-</div>
-
-
+}*@
 <style>
-    .cssgsbutton {
-        text-decoration: none;
-        padding: 10px 5px;
-        border: 1px solid #fff;
-        background-color: #e21;
-        color: #fff;
-        border-radius: 4px;
+
+
+* {
+  font-size: 1rem;
+}
+
+    h1 {
         text-align: center;
+        color: rgba(0,0,0,0.7);
+        font-weight: bold;
+        font-size: 30px;
     }
 
-    .cssgsbuttoncreate {
-        text-decoration: none;
-        padding: 10px 5px;
-        border: 1px solid #fff;
-        background-color: #e21;
-        color: #fff;
-        border-radius: 4px;
+
+.body-experiencia {
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  /* display: grid; */
+ /* background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);*/
+}
+
+.container {
+    padding: 0px 0px;
+}
+
+
+.conteudo {
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
+  color: #000;
+  padding: 0px 0px;
+  gap: 20px;
+  
+  /*background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);*/
+}
+
+.post {
+  display: grid;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  gap: 10px;
+}
+
+.post .post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.post .post-data {
+  color: #717171;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.post .post-icon {
+  width: 1rem;
+}
+
+.post-subtitulo {
+    font-size: 16px;
+    text-transform: lowercase;
+}
+
+.post-descricao{
+  word-wrap: break-word;
+  max-width: 35ch;
+  text-align: left;
+
+}
+
+
+h1 {
+    text-align: center;
+    color: #eee1e1;
+}
+
+.datas-experiencias {
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 0.6rem;
+    color: gray;
+    gap: 0px;
+
+}
+
+.datas-experiencias p {
+    margin: 0px;
+            font-size: 0.7rem;
+}
+
+    .estrelas-icone {
+        color: gold;
+        font-size: 0.6rem;
+        margin-bottom: 25px
     }
 
-    .cssgsdivbutton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .cssgstable 
-    {
-        background: #fff;
-        color: black;
-    }
-
-    .cssgsh1 {
-        text-align: center;
-    }
-
-    .cssgsh1div 
-    {
-    }
-
-    .cssgsbuttoncreatediv 
-    {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
+    .opcoes-admin {
         display: none;
     }
+
+    @@media (min-width: 1000px) {
+        .body-experiencia {
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            /* display: grid; */
+            /* background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);*/
+        }
+
+        .container {
+            padding: 0px 0px;
+        }
+
+
+        .conteudo {
+            display: grid;
+            justify-content: center;
+            margin: 0 auto;
+            color: #000;
+            padding: 0px 0px;
+            gap: 20px;
+            /*background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);*/
+        }
+
+        .post {
+            display: grid;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            gap: 10px;
+        }
+
+            .post .post-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+            }
+
+            .post .post-data {
+                color: #717171;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            .post .post-icon {
+                width: 1rem;
+            }
+
+        .post-subtitulo {
+            font-size: 16px;
+            text-transform: lowercase;
+        }
+
+        .post-descricao {
+            word-wrap: break-word;
+            max-width: 80ch;
+            text-align: left;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #eee1e1;
+        }
+
+        .datas-experiencias {
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.6rem;
+            color: gray;
+            gap: 0px;
+        }
+
+            .datas-experiencias p {
+                margin: 0px;
+                font-size: 0.9rem;
+            }
+
+        .estrelas-icone {
+            color: gold;
+            font-size: 0.8rem; 
+            margin-bottom:25px
+        }
+
+        .opcoes-admin {
+            display: block;
+        }
+    }
+
 </style>
 
-<p>
-<a asp-action="Create">Create New</a>
-</p>
 
-<div class="cssgsbuttoncreatediv">
-    <a class="cssgsbuttoncreate" asp-action="Create">Create New</a>
-</div>
-<table class="table cssgstable">
-    <thead>
-        <tr>
-@*            <th>
-                @Html.DisplayNameFor(model => model.IdVoluntario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdOng)
-            </th>*@
-            <th>
-                @*@Html.DisplayNameFor(model => model.NomeVoluntario)*@
-                Voluntário
-            </th>
-            <th>
-               @* @Html.DisplayNameFor(model => model.NomeOng)*@
-               Ong
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.ProjetoEnvolvido)*@
-                Projeto
-            </th>
-@*            <th>
-                @Html.DisplayNameFor(model => model.Opiniao)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.DataPostagem)
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.DataExperienciaInicio)*@
-                Data Inicio
-            </th>
-            <th>
-               @* @Html.DisplayNameFor(model => model.DataExperienciaFim)*@
-                Data Fim
-            </th>
-@*            <th>
-                @Html.DisplayNameFor(model => model.CriadoEm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Actived)
-            </th>*@
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.IdVoluntario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdOng)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeVoluntario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeOng)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjetoEnvolvido)
-            </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.Opiniao)
-            </td>*@
-            <td>
-@*                @Html.DisplayFor(modelItem => item.DataPostagem)*@
-                  <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataPostagem)" disabled>
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.DataExperienciaInicio)*@
-                    <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataExperienciaInicio)" disabled>
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.DataExperienciaFim)*@
-                    <input type="datetime" value="@Html.DisplayFor(modelItem => item.DataExperienciaFim)" disabled>
-            </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.CriadoEm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actived)
-            </td>*@
-            <td>
-                <div class="cssgsdivbutton">
-                <a class="cssgsbutton" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                <a class="cssgsbutton" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                <a class="cssgsbutton" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+<div class="body-experiencias">
+
+<h1 style="color:rgba(0,0,0,0.8); margin-bottom: 20px">Experiencias</h1>
+
+<main>
+
+    <article aria-label="noticia" class="conteudo">
+
+        @foreach (var item in Model) {
+
+        <div class="post">
+            <div class="post-header">
+                <p class="post-data">@item.DataPostagem</p>
+                        
+                        <div style="margin: 0px;">
+                            @for (var i = 0; i < (int)item.Nota; i++)
+                            {
+                                <i class="fa-solid fa-star estrelas-icone"></i>
+                            }
+                            <br>
+                            <div class="opcoes-admin">
+                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i></a>
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+                                </div>
+                        </div>
+                        
                 </div>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+            <h2 class="post-subtitulo">@@_@item.NomeVoluntario:</h2>
+            <p class="post-descricao">@item.Opiniao</p>
+
+            <div class="datas-experiencias">
+                <p class="post-data-inicio">Inicio: @item.DataExperienciaInicio</p>
+                <p class="post-data-fim">Fim: @item.DataExperienciaInicio</p>
+                <p class="post-data-projeto">Projeto: @item.ProjetoEnvolvido</p>
+                <p class="post-data-ong">Ong: @item.NomeOng</p>
+            </div>
+        </div>
+        }
+
+       
+    </article>
+</main>
+
+@*<footer class="footer">
+    <p>Codelandia. Todos os Direitos Reservados.</p>
+</footer>*@
+
+</div>

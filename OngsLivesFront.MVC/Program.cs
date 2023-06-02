@@ -1,31 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using ONGLIVES.API.Persistence.Context;
-using OngsLivesFront.MVC.Helpers;
-using OngsLivesFront.MVC.Repository;
+using OngsLivesFront.MVC.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddRegisterServices();
 
-///
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-builder.Services.AddScoped<ISessao, Sessao>();
-
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();    
-
-builder.Services.AddSession(x =>
-{
-    x.Cookie.HttpOnly = true;
-    x.Cookie.IsEssential = true;
-});
-///
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<OngLivesContext>();
 
 builder.Services.AddDbContext<OngLivesContext>(options => {options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));});
+
+builder.Services.AddCors(options => { options.AddPolicy("OngsLivesCorsPolicy", builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }); });
 
 var app = builder.Build();
 
@@ -48,12 +37,12 @@ app.UseAuthorization();
 app.UseSession();
 //
 
-app.UseCors(
-    options => options
-    .AllowAnyOrigin()
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    );
+//app.UseCors(
+//    options => options
+//    .AllowAnyOrigin()
+//    .AllowAnyHeader()
+//    .AllowAnyMethod()
+//    );
 
 app.MapControllerRoute(
     name: "default",

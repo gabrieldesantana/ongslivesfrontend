@@ -1,5 +1,4 @@
-﻿using ONGLIVES.API.Entidades;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OngsLivesFront.MVC.Models
 {

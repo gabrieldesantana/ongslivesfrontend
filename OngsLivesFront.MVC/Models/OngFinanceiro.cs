@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
-using ONGLIVES.API.Entidades;
 
+namespace OngsLivesFront.MVC.Models;
 public class OngFinanceiro : Base
 {
     public OngFinanceiro()

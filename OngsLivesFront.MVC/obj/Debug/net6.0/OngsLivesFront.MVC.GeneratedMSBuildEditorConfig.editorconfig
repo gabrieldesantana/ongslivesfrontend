@@ -9,185 +9,261 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OngsLivesFront.MVC
 build_property.RootNamespace = OngsLivesFront.MVC
-build_property.ProjectDir = F:\gsgomes\__codigos\linguagens\csharp\2023\Github_OL_Front_Alone_23_05_net6\OngsLivesFront.MVC\OngsLivesFront.MVC\
+build_property.ProjectDir = C:\Users\Gabriel Gomes\Desktop\front_ol_git\ol_front_ol\ongslivesfrontend\OngsLivesFront.MVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\gsgomes\__codigos\linguagens\csharp\2023\Github_OL_Front_Alone_23_05_net6\OngsLivesFront.MVC\OngsLivesFront.MVC
+build_property.MSBuildProjectDirectory = C:\Users\Gabriel Gomes\Desktop\front_ol_git\ol_front_ol\ongslivesfrontend\OngsLivesFront.MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Experiencias/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Experiencias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jaWFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Experiencias/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Experiencias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jaWFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Experiencias/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Experiencias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jaWFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Experiencias/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Experiencias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jaWFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Experiencias/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Experiencias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jaWFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Home/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Home/Privacy.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Login/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Imagens/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Imagens/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Imagens/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Imagens/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Imagens/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2Vuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Login/Index3.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXgzLmNzaHRtbA==
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Mapas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/OngFinanceiros/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/OngFinanceiros/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nRmluYW5jZWlyb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/OngFinanceiros/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/OngFinanceiros/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nRmluYW5jZWlyb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/OngFinanceiros/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/OngFinanceiros/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nRmluYW5jZWlyb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/OngFinanceiros/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/OngFinanceiros/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nRmluYW5jZWlyb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/OngFinanceiros/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/OngFinanceiros/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nRmluYW5jZWlyb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Ongs/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Ongs/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Ongs/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Ongs/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Ongs/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/Components/MenuBaixo/Default.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Index_new.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xJbmRleF9uZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Ongs/Perfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25nc1xQZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/Components/MenuApenasNavBar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUFwZW5hc05hdkJhclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/Components/MenuBaixo/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUJhaXhvXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/Components/MenuCima/Default.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/Components/MenuCima/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUNpbWFcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/Error.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Usuarios/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Suporte/Contato.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vwb3J0ZVxDb250YXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Suporte/Duvidas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vwb3J0ZVxEdXZpZGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Suporte/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Vwb3J0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Usuarios/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Create3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Usuarios/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Usuarios/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Usuarios/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Vagas/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Vagas/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Vagas/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Vagas/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Vagas/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Voluntarios/Create.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Vagas/VagasByOngId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFnYXNcVmFnYXNCeU9uZ0lkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Voluntarios/Delete.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Create3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcQ3JlYXRlMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Voluntarios/Details.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Voluntarios/Edit.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Voluntarios/Index.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/_ViewImports.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Voluntarios/Perfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50YXJpb3NcUGVyZmlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/_ViewStart.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/_Layout.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1jgw644snl
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/_Layout1.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-qtwf2rg3va
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/_Layout2.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-mv3wj9fotd
 
-[F:/gsgomes/__codigos/linguagens/csharp/2023/Github_OL_Front_Alone_23_05_net6/OngsLivesFront.MVC/OngsLivesFront.MVC/Views/Shared/_NoLayout.cshtml]
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout_cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfY2FkYXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wqqaxbrni9
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout_mobile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfbW9iaWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-rz8k2b1c30
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_Layout_OnlyCima.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfT25seUNpbWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-6ehrz57bpb
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_NoLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-b1ha02fvgo
+
+[C:/Users/Gabriel Gomes/Desktop/front_ol_git/ol_front_ol/ongslivesfrontend/OngsLivesFront.MVC/Views/Shared/_NoLayout_Suporte.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob0xheW91dF9TdXBvcnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-yqy9i9alcq

@@ -1,4 +1,4 @@
-﻿@model ONGLIVES.API.Entidades.Ong
+﻿@model Ong
 
 @{
     ViewData["Title"] = "Edit";
@@ -42,12 +42,14 @@
                 <input asp-for="QuantidadeEmpregados" class="form-control" />
                 <span asp-validation-for="QuantidadeEmpregados" class="text-danger"></span>
             </div>
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="CriadoEm" class="control-label"></label>
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
-            </div>
+            </div>*@
+
             <input type="hidden" asp-for="Id" />
+
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)

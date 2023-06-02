@@ -1,5 +1,4 @@
-﻿using ONGLIVES.API.Entidades;
-using OngsLivesFront.MVC.Models.Enums;
+﻿using OngsLivesFront.MVC.Models.Enums;
 
 namespace OngsLivesFront.MVC.Models
 {

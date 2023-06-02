@@ -11,13 +11,18 @@
 
 <style>
 
+
+        @@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
         *{
     margin: 0;
     padding: 0;
 }
 
+
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: black;
     font-size: 14px;
     
@@ -215,6 +220,7 @@ header{
 {
     .corpo{
         background-size: cover;
+
        /* height: 100vh;*/
         background-repeat: no-repeat;
         background-position: center;
@@ -491,44 +497,12 @@ header{
     <header class="cabeca">
         <nav class="cabecaEsquerda">
             <a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            @*<a href="#">Registrar</a>*@
         </nav>
         <nav class="cabecaDireita">
             <a class="centralCliente" href="#">Ongs Lives</a>
         </nav>
     </header>
 
-@*    <main>
-        <div class="linha2">
-
-            <div class="suporte">
-                <i class="fa-solid fa-file-pen"></i>
-                <a href="" class="opcoes"> SUPORTE <i class="fa-solid fa-chevron-down"></i></a>
-            </div>
-
-            <div class="mensagem">
-                <i class="fa-solid fa-bell"></i>
-                <a href="" class="opcoes"> MENSAGENS <i class="fa-solid fa-chevron-down"></i></a>
-            </div>
-
-            <div class="chat">
-                <i class="fa-sharp fa-solid fa-message"></i>
-                <a href="" class="opcoes"> CHAT <i class="fa-solid fa-chevron-down"></i></a>
-            </div>
-        </div>
-
-        <div class="linha3">
-            <span class="listradinamica1"></span>
-            <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span class="opcao-menu">GPS</span><i class="fa-solid fa-file-pen"></i></a>
-            <a class="" asp-area="" asp-controller="Ongs" asp-action="Index"><span class="opcao-menu">ONGS</span><i class="fa-solid fa-file-pen"></i></a>
-            <a class="" asp-area="" asp-controller="Vagas" asp-action="Index"><span class="opcao-menu">VAGAS</span><i class="fa-solid fa-file-pen"></i></a>
-            <a class="" asp-area="" asp-controller="Voluntarios" asp-action="Index"><span class="opcao-menu">VOLUNTARIOS</span><i class="fa-solid fa-file-pen"></i></a>
-            <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span class="opcao-menu">CHAT</span><i class="fa-solid fa-file-pen"></i></a>
-            <a class="" asp-area="" asp-controller="Usuarios" asp-action="Index"><span class="opcao-menu">USUARIOS</span><i class="fa-solid fa-file-pen"></i></a>
-           <span class="listradinamica2"></span>
-        </div>
-
-    </main>*@
 
     <div class="container">
         <main role="main" class="pb-3">

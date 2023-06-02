@@ -1,4 +1,4 @@
-﻿@model Usuario
+﻿@model CadastroModel
 
 <main>
 
@@ -6,28 +6,86 @@
     <div class="linha3">
         <span class="listradinamica1"></span>
 
-        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span class="opcao-menu">GPS</span><i class="fa-solid fa-location-dot"></i></a>
 
-        @if (Model.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Admin || Model.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Voluntario)
+        @if (Model.Usuario.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Voluntario)
         {
+            @if (Model.Usuario.Actived == false)
+            {
+                <a class="" asp-area="" asp-controller="Voluntarios" asp-action="Create"><span class="opcao-menu">+VOLUNTARIO</span><i class="fa-solid fa-plus"></i></a>
+                <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-comments"></i></a>
+            }
+
+            @if (Model.Usuario.Actived == true)
+            {
+                <a class="" asp-area="" asp-controller="Mapas" asp-action="Index"><span class="opcao-menu">GPS</span><i class="fa-solid fa-location-dot"></i></a>
+                <a class="" asp-area="" asp-controller="Ongs" asp-action="Index"><span class="opcao-menu">ONGS</span><i class="fa-solid fa-handshake-angle"></i></a>
+                <a class="" asp-area="" asp-controller="Experiencias" asp-action="Create"><span class="opcao-menu">POSTAR EXPERIENCIA</span> <i class="fa-solid fa-share-nodes"></i> </a>
+                <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-comments"></i></a>
+                <a class="" asp-area="" asp-controller="Vagas" asp-action="Index"><span class="opcao-menu">VAGAS</span><i class="fa-solid fa-briefcase"></i></a>
+            }
+
+        }
+
+        @if (Model.Usuario.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Ong)
+        {
+            @if (Model.Usuario.Actived == true)
+            {
+                <a class="" asp-area="" asp-controller="Mapas" asp-action="Index"><span class="opcao-menu">GPS</span><i class="fa-solid fa-location-dot"></i></a>
+                <a class="" asp-area="" asp-controller="Voluntarios" asp-action="Index"><span class="opcao-menu">VOLUNTARIOS</span><i class="fa-solid fa-people-arrows"></i></a>
+                <a class="" asp-area="" asp-controller="Vagas" asp-action="Create" asp-route-id="@Model.Ong.Id"><span class="opcao-menu">CRIAR VAGA</span><i class="fa-solid fa-plus "></i></a>
+                <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-book-open"></i></a>
+
+                @if (Model.Ong.Vagas != null || Model.Ong.Vagas.Count >= 1)
+                {
+
+                    <a class="" href="/Vagas/VagasByOngId/*" onclick="atualizarValor()" id="minhasvagasid"> <span class="opcao-menu">MINHAS VAGAS</span><i class="fa-solid fa-briefcase"></i></a>
+
+                  @*  <a class="" href="/Vagas/VagasByOngId/@Model.Ong.id"> <span class="opcao-menu">MINHAS VAGAS</span><i class="fa-solid fa-briefcase"></i></a>*@
+
+                    
+                    <script>
+
+                        function atualizarValor() {
+
+                            var numero = prompt("Mátricula da sua Ong:");
+
+                            // Verifica se foi fornecido um valor
+                            if (numero !== null && numero !== "") {
+                                // Atualiza a URL com o valor fornecido
+                                var link = document.getElementById('minhasvagasid');
+                                var url = link.href;
+                                url = url.replace("*", numero);
+                                link.href = url;
+                                console.log("Carregandos")
+                            } else 
+                            {
+                                alert("Nenhuma matricula foi fornecida.");
+                            }
+                        }
+
+                    </script>
+                }
+            }
+
+            @if (Model.Usuario.Actived == false)
+            {
+                <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-comments"></i></a>
+                <a class="" asp-area="" asp-controller="Ongs" asp-action="Create"><span class="opcao-menu">+ONG</span><i class="fa-solid fa-plus"></i></a>
+            }
+
+        }
+
+
+        @if (Model.Usuario.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Admin)
+        {
+            <a class="" asp-area="" asp-controller="Mapas" asp-action="Index"><span class="opcao-menu">GPS</span><i class="fa-solid fa-location-dot"></i></a>
             <a class="" asp-area="" asp-controller="Ongs" asp-action="Index"><span class="opcao-menu">ONGS</span><i class="fa-solid fa-handshake-angle"></i></a>
-        }
-
-        <a class="" asp-area="" asp-controller="Vagas" asp-action="Index"><span class="opcao-menu">VAGAS</span><i class="fa-solid fa-briefcase"></i></a>
-
-        @if (Model.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Admin || Model.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Ong)
-        {
+            <a class="" asp-area="" asp-controller="Vagas" asp-action="Index"><span class="opcao-menu">VAGAS</span><i class="fa-solid fa-briefcase"></i></a>
             <a class="" asp-area="" asp-controller="Voluntarios" asp-action="Index"><span class="opcao-menu">VOLUNTARIOS</span><i class="fa-solid fa-people-arrows"></i></a>
-            <a class="" asp-area="" asp-controller="OngFinanceiros" asp-action="Index"><span class="opcao-menu">FINANCEIRO</span><i class="fa-solid fa-money-bills"></i></a>
-        }
-
-        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span class="opcao-menu">CHAT</span><i class="fa-solid fa-comments"></i></a>
-
-        @if (Model.Perfil == OngsLivesFront.MVC.Models.Enums.EPerfilUsuario.Admin)
-        {
             <a class="" asp-area="" asp-controller="Usuarios" asp-action="Index"><span class="opcao-menu">USUARIOS</span><i class="fa-solid fa-users"></i></a>
+            <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-comments"></i></a>
         }
-        <a class="" asp-area="" asp-controller="Experiencias" asp-action="Index"><span class="opcao-menu">EXPERIENCIAS</span><i class="fa-solid fa-comments"></i></a>
+
         <span class="listradinamica2"></span>
     </div>
 

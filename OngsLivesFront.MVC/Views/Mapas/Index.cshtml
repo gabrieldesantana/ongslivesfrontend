@@ -1,0 +1,178 @@
+﻿@model List<Ong>
+
+@{
+    Layout = "_Layout_mobile";
+}
+
+
+
+<style>
+
+    .body-mapa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #map {
+        height: calc(100vh - 10vh);
+        width: 80vw;
+    }
+
+    .endereco-inputs {
+        display: none;
+    }
+</style>
+
+<body>
+
+<div class="body-mapa">
+
+  <div id="map"></div>
+
+    
+    @if (Model != null)
+    {
+            @foreach (var item in Model)
+            {
+            if (item.Id > 9)
+            {
+                <div class="endereco-inputs">
+                    <input type="text" class="id" id="lat" value="@item.Id"/>
+                    <input type="text" class="end" id="lat" value="@item.Nome"/>
+                    <input type="text" class="lat" id="lat" value="@item.Endereco.Latitude"/>
+                    <input type="text" class="long" id="long" value="@item.Endereco.Longitude" />
+                </div>
+            }
+
+            }
+    }
+
+    </div>
+
+
+    <script>
+
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: -10.9346211, lng: -37.0704384 } // Defina o centro do mapa de acordo com suas necessidades
+            });
+
+            var nomesList = [];
+            var latList = [];
+            var longList = [];
+
+            
+            var nomes = document.getElementsByClassName('end');
+            var latitudes = document.getElementsByClassName('lat');
+            var longitudes = document.getElementsByClassName('long')
+
+            console.log(nomes.length)
+            for (var i = 0; i < nomes.length; i++){
+
+                console.log(nomes[i])
+            }
+                
+
+            if (nomes.length === latitudes.length && nomes.length === longitudes.length) 
+            {
+                for (var i = 0; i < nomes.length; i++) 
+                {
+                    var nomeUni = nomes[i].value
+                    var latUni = parseFloat(latitudes[i].value);
+                    var longUni = parseFloat(longitudes[i].value);
+
+                    nomesList.push(nomeUni);
+                    latList.push(latUni);
+                    longList.push(longUni);
+                }
+            }
+
+            var markers = [];
+
+            console.log(nomesList.length)
+
+            if (nomesList.length === latList.length && nomesList.length === longList.length) {
+                for (var i = 0; i < nomesList.length; i++) {
+                var ponto = {
+                        lat: latList[i],
+                        lng: longList[i],
+                        title: nomesList[i],
+                };
+                    console.log(JSON.stringify(ponto) + " ponto");
+                     markers.push(ponto);
+                }
+            }
+
+
+            console.log(JSON.stringify(markers) + " markers");
+
+            //for (const markerData of markers) {
+            //    const marker = new google.maps.Marker({
+            //        position: { lat: markerData.lat, lng: markerData.lng },
+            //        map: map,
+            //        title: markerData.title
+            //    });
+            //}
+
+            //for (const markerData of markers) {
+            //    const marker = new google.maps.Marker({
+            //        position: { lat: markerData.lat, lng: markerData.lng },
+            //        map: map,
+            //        title: markerData.title,
+            //        icon: {
+            //            url: './img/logo_ol.png', // Substitua pelo caminho do ícone desejado
+            //            scaledSize: new google.maps.Size(30, 30), // Tamanho personalizado do ícone
+            //            origin: new google.maps.Point(0, 0), // Ponto de origem do ícone
+            //            anchor: new google.maps.Point(15, 15) // Ponto de ancoragem do ícone
+            //        },
+            //        // Outras opções de estilo visual
+            //         label: {
+            //           text: 'Label do marcador',
+            //           color: 'cor do texto',
+            //           fontWeight: 'bold',
+            //           fontSize: '14px'
+            //         },
+            //         animation: google.maps.Animation.BOUNCE
+            //    });
+            //}
+
+             for (const markerData of markers) {
+                const marker = new google.maps.Marker({
+                  position: { lat: markerData.lat, lng: markerData.lng },
+                  map: map,
+                  title: markerData.title,
+                  icon: {
+                        url: './img/logo_ol.png', // Substitua pelo caminho do ícone desejado
+                        scaledSize: new google.maps.Size(30, 30), // Tamanho personalizado do ícone
+                        origin: new google.maps.Point(0, 0), // Ponto de origem do ícone
+                        anchor: new google.maps.Point(15, 15) // Ponto de ancoragem do ícone
+                    },
+                    // Outras opções de estilo visual
+                     //label: {
+                     //  text: 'Label do marcador',
+                     //  color: 'cor do texto',
+                     //  fontWeight: 'bold',
+                     //  fontSize: '14px'
+                     //}
+                     animation: google.maps.Animation.BOUNCE
+                });
+
+                marker.addListener('click', function() {
+                  const latLng = marker.getPosition().toJSON();
+                  const url = `https://www.google.com/maps/dir/?api=1&destination=${latLng.lat},${latLng.lng}`;
+                  window.open(url, '_blank');
+                });
+      }
+        }
+
+
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5caEwpXijUm3VTmIg6fRpZ0DFiXj95hw&callback=initMap" async defer></script>
+</body>

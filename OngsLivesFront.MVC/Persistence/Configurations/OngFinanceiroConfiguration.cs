@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ONGLIVES.API.Entidades;
+using OngsLivesFront.MVC.Models;
 
 public class OngFinanceiroConfiguration : IEntityTypeConfiguration<OngFinanceiro>
 {

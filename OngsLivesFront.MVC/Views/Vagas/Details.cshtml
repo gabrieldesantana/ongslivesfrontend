@@ -1,78 +1,151 @@
-﻿@model ONGLIVES.API.Entidades.Vaga
+﻿@model Vaga
 
 @{
     ViewData["Title"] = "Details";
+    var OngViewBag = ViewBag.Ong;
 }
 
-<h1>Details</h1>
+@{
+    Layout = "_Layout_mobile";
+}
+
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .container-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        /* background-color: green;*/
+    }
+
+    .imagem-perfil-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+        .imagem-perfil-container img {
+            width: 20vw;
+            height: auto;
+            border-radius: 5px;
+        }
+
+    .iframe-mapa {
+        width: 70vw;
+        height: 200px;
+    }
+
+    .botoes-mapa {
+        padding: 5px;
+    }
+
+    .map-container {
+        margin-top: 20px;
+    }
+
+
+    .btn-map-android {
+        padding: 10px 20px;
+        min-width: 30px;
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius: 4px;
+        color: rgba(0,0,0,0.6);
+        background-color: greenyellow;
+    }
+
+    .btn-map-ios {
+        padding: 10px 20px;
+        min-width: 30px;
+        border: 1px solid rgba(0,0,0,0.5);
+        border: 0px;
+        border-radius: 4px;
+        color: rgba(0,0,0,0.7);
+        background-color: deepskyblue;
+        margin-left: 10px;
+    }
+
+    @@media (max-width: 770px) {
+
+        .imagem-perfil-container img {
+            width: 50vw;
+            /* height: 400px;*/
+            border-radius: 5px;
+        }
+    }
+
+</style>
+
+
 
 <div>
-    <h4>Vaga</h4>
+    <h4>Vaga em @OngViewBag.Nome</h4>
     <hr />
+
+    <div class="imagem-perfil-container">
+        <img src="~/img/vagas_ong.jpg" alt="" />
+    </div>
+
+    <hr />
+
     <dl class="row">
+
+
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdVoluntario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdVoluntario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdOng)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdOng)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
+            Tipo da Vaga
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Tipo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Turno)
+            Turno da Vaga
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Turno)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
+            Descricao da Vaga
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Habilidade)
+            Habilidade necessária
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Habilidade)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataInicio)
+            Data Inicio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DataInicio)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataFim)
+            Data Fim
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DataFim)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CriadoEm)
+            Disponivel
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CriadoEm)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Actived)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Actived)
+            @Html.DisplayFor(model => model.Disponivel)
         </dd>
     </dl>
+
+    <div style="background: blue; max-width: 300px; color:#fff; text-align: center; border-radius: 4px;padding:10px;">
+        <p>Telefone: @OngViewBag.Telefone</p>
+        <p>E-mail: @OngViewBag.Email</p>
+    </div>
+ 
 </div>
-<div>
+@*<div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

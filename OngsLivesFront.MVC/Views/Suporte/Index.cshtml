@@ -1,0 +1,182 @@
+﻿@{
+    Layout = "_NoLayout_Suporte";
+}
+
+ <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            transition: 0.3s;
+            color: #d42f8d
+        }
+
+        body {
+            font-size: 100%;
+            background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);
+        }
+
+        .cabecalho {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 24px;
+        }
+
+        .cabecalho-img {
+            height: 72px;
+        }
+
+        .cabecalho-menu {
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .cabecalho-menu-item {
+            font-family: 'Sarala', sans-serif;
+            color: #FFF2E7;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        .conteudo {
+            margin-bottom: 48px;
+            border-top: 0.4px solid #FFF2E7;
+        }
+
+        .conteudo-principal {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px;
+            gap: 100px;
+        }
+
+        .conteudo-principal-escrito {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .conteudo-principal-escrito-titulo {
+            font-family: 'Righteous', cursive;
+            font-weight: 400;
+            font-size: 64px;
+            color: #FFF2E7
+        }
+
+        .conteudo-principal-escrito-subtitulo {
+            font-family: 'Sarala', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: #ECD6C4;
+        }
+
+        .conteudo-principal-escrito-botao {
+            background-color: #ECD6C4;
+            width: 150px;
+            height: 45px;
+            border: none;
+            box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            font-family: 'Sarala', sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            text-align: center;
+            color: #2F2325;
+        }
+
+        .conteudo-principal-escrito-botao:hover {
+            background-color: rgba(236, 214, 196, 0.53);
+        }
+
+
+        .conteudo-principal-imagem {
+            height: 430px;
+        }
+
+        .conteudo-secundario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-top: 12px;
+        }
+
+        .conteudo-secundario-titulo {
+            border-top: 0.4px solid #FFF2E7;
+            padding-top: 48px;
+            font-family: 'Righteous', cursive;
+            font-weight: 400;
+            font-size: 24px;
+            color: #FFF2E7;
+            margin-bottom: 16px;
+        }
+
+        .conteudo-secundario-paragrafo {
+            font-family: 'Sarala', cursive;
+            font-size: 18px;
+            color: #FFF2E7;
+
+        }
+
+        .rodape {
+            padding: 32px;
+            border-top: 0.4px solid #FFF2E7;
+        }
+
+        .rodape-imagem {
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+
+    <header class="cabecalho">
+        <img class="cabecalho-img" src="~/img/logo_ol.png" alt="Logo ONGs Lives">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item" asp-action="Index">Página Inicial</a>
+            <a class="cabecalho-menu-item" asp-action="Duvidas">Dúvidas ?</a>
+            <a class="cabecalho-menu-item" asp-action="Contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section class="conteudo-principal">
+            <div class="conteudo-principal-escrito">
+                <h1 class="conteudo-principal-escrito-titulo">Suporte !?</h1>
+                <h2 class="conteudo-principal-escrito-subtitulo">Te ajudar é o que nos faz feliz!</h2>
+                <a asp-action="Contato" class="conteudo-principal-escrito-botao">Me Ajude</a>
+            </div>
+        <img class="conteudo-principal-imagem" src="~/img/logo_ol.png" alt="Imagem da ONGs Lives aqui!!">
+        </section>
+
+        <section class="conteudo-secundario">
+            <h3 class="conteudo-secundario-titulo">Algumas dicas rápidas!</h3>
+            <p class="conteudo-secundario-paragrafo">Contate nosso suporte clicando no botão ao lado da
+                <strong>imagem acima!</strong>
+            </p>
+            <p class="conteudo-secundario-paragrafo">Dúvidas sobre cadastro de voluntário, registro de ONG entre
+                outros, por favor visite nosso <strong>FAQ
+                    ou no campo de Dúvidas.</strong></p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+    <img class="rodape-imagem" src="~/img/logo_ol.png" alt="Logo ONGs Lives">
+    </footer>

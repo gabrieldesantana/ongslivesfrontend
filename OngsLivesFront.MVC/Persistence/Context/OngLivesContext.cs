@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ONGLIVES.API.Entidades;
 using OngsLivesFront.MVC.Models;
-namespace ONGLIVES.API.Persistence.Context 
+namespace ONGLIVES.API.Persistence.Context
 {
     public class OngLivesContext : DbContext
     {
@@ -15,6 +14,7 @@ namespace ONGLIVES.API.Persistence.Context
         public DbSet<Experiencia> TB_Experiencias { get; set; }
         public DbSet<OngFinanceiro> TB_OngFinanceiros { get; set; }
         public DbSet<Usuario> TB_Usuarios { get; set; }
+        public DbSet<Imagem> TB_Imagens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

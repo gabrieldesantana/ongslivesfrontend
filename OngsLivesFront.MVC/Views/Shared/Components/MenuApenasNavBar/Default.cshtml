@@ -1,0 +1,28 @@
+﻿@model CadastroModel
+
+<header class="cabeca">
+    <nav class="cabecaEsquerda">
+           <a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <a class="centralCliente" asp-controller="Home" asp-action="Index">Mat: @Model.Ong.Id</a>
+    </nav>
+    <nav class="cabecaDireita">
+
+        @if (Model.Ong.Nome != "Vazio")
+        {
+            @if (Model.Ong.Id != 0)
+            {
+                <a class="centralCliente" asp-controller="Ongs" asp-action="Details" asp-route-id="@Model.Ong.Id">Ongs Lives</a>
+            }
+          
+        }
+        @if (Model.Voluntario.Nome != "Vazio")
+        {
+            @if (Model.Voluntario.Id != 0)
+            {
+                <a class="centralCliente" asp-controller="Voluntarios" asp-action="Details" asp-route-id="@Model.Voluntario.Id">Ongs Lives</a>
+            }
+            
+        }
+
+    </nav>
+</header>

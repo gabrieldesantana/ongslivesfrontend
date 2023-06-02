@@ -1,40 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ONGLIVES.API.Persistence.Context;
+using OngsLivesFront.MVC.API;
+using OngsLivesFront.MVC.API.Interfaces;
 using OngsLivesFront.MVC.Filters;
 using OngsLivesFront.MVC.Models;
 
 namespace OngsLivesFront.MVC.Controllers
 {
-    [PaginaRestritaAdmin]
+    //[PaginaRestritaAdmin]
     public class UsuariosController : Controller
     {
-        private readonly OngLivesContext _context;
+        private readonly IUsuarioAPI _usuarioAPI;
 
-        public UsuariosController(OngLivesContext context)
+        public UsuariosController(IUsuarioAPI usuarioAPI)
         {
-            _context = context;
+            _usuarioAPI = usuarioAPI;
         }
-
-        // GET: Usuarios
+        [PaginaRestritaAdmin]
         public async Task<IActionResult> Index()
         {
-              //return _context.Usuario != null ? 
-              //            View(await _context.Usuario.ToListAsync()) :
-              //            Problem("Entity set 'OngLivesContext.Usuario'  is null.");
-              return View(await _context.TB_Usuarios.ToListAsync());
+            try
+            {
+                var usuarios = await _usuarioAPI.GetUsuarios();
+                return View(usuarios);
+            }
+            catch (Exception)
+            {
+                return Problem(" Erro 500: Favor contactar o Administrador do Sistema");
+            }
         }
 
-        // GET: Usuarios/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.TB_Usuarios == null)
-            {
-                return NotFound();
-            }
+            var usuario = await _usuarioAPI.GetUsuario(id);
 
-            var usuario = await _context.TB_Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -43,52 +43,48 @@ namespace OngsLivesFront.MVC.Controllers
             return View(usuario);
         }
 
-        // GET: Usuarios/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpGet]
+        public IActionResult Create2()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,Login,Email,Perfil,Senha,Id")] Usuario usuario)
+        public async Task<IActionResult> Create(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                usuario.Actived = true;
-                usuario.CriadoEm = DateTime.Now;
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                await _usuarioAPI.CreateUsuario(usuario);
+
+                return RedirectToAction("Index", "Home");
             }
+
             return View(usuario);
         }
 
-        // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null || _context.TB_Usuarios == null)
-            {
-                return NotFound();
-            }
+            var usuario = await _usuarioAPI.GetUsuario(id);
 
-            var usuario = await _context.TB_Usuarios.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound();
             }
+
             return View(usuario);
         }
 
-        // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Nome,login,Email,Perfil,Senha,Id,Actived")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, Usuario usuario)
         {
             if (id != usuario.Id)
             {
@@ -97,37 +93,17 @@ namespace OngsLivesFront.MVC.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UsuarioExists(usuario.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                await _usuarioAPI.UpdateUsuario(usuario);
+                return RedirectToAction("Index");
             }
+
             return View(usuario);
         }
 
-        // GET: Usuarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null || _context.TB_Usuarios == null)
-            {
-                return NotFound();
-            }
+            var usuario = await _usuarioAPI.GetUsuario(id);
 
-            var usuario = await _context.TB_Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -136,28 +112,12 @@ namespace OngsLivesFront.MVC.Controllers
             return View(usuario);
         }
 
-        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TB_Usuarios == null)
-            {
-                return Problem("Entity set 'OngLivesContext.Usuario'  is null.");
-            }
-            var usuario = await _context.TB_Usuarios.FindAsync(id);
-            if (usuario != null)
-            {
-                _context.TB_Usuarios.Remove(usuario);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool UsuarioExists(int id)
-        {
-          return (_context.TB_Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
+            await _usuarioAPI.DeleteUsuario(id);
+            return RedirectToAction("Index");
         }
     }
 }

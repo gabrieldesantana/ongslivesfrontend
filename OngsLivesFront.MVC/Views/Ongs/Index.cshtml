@@ -1,79 +1,226 @@
-﻿@model IEnumerable<ONGLIVES.API.Entidades.Ong>
+﻿@model IEnumerable<Ong>
 @{
-    Layout = "_Layout2";
+    Layout = "_Layout_mobile";
 }
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ongs";
 }
 
-<h1>Ongs</h1>
+<style>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CNPJ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AreaAtuacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuantidadeEmpregados)
-            </th>
-@*            <th>
-                @Html.DisplayNameFor(model => model.CriadoEm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Actived)
-            </th>*@
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CNPJ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaAtuacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuantidadeEmpregados)
-            </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.CriadoEm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actived)
-            </td>*@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+
+
+body{
+    margin: 0;
+    padding: 0;
+    gap: 0px;
+    background-color: pink;
 }
-    </tbody>
-</table>
+
+    h1 {
+        text-align: center;
+        color: rgba(0,0,0,0.7);
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+
+.body-catalogo {
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    max-width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 60px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 900px;
+    box-sizing: border-box;
+
+}
+
+    .titulo-catalogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.image {
+    display: flex;
+    line-height: 1;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(0.9);
+}
+
+
+
+.info-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    min-width: 200px;
+    padding: 10px;
+
+}
+
+    .image-info {
+    }
+
+.ong-info{
+    line-height: 0;
+    color: gray;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.opcoes-admin{
+    display: none;
+}
+
+
+@@media (max-width: 770px) {
+
+    .image-container {
+        width: calc(100% - 20px);
+        margin: 0px 10px;
+
+    }
+
+    .info-box {
+            width: calc(80% - 20px);
+    }
+
+    .container {
+        max-width: 100vw;
+    }
+}
+
+@@media (max-width: 480px) {
+
+
+    .image-container{
+            width: calc(100% - 20px);
+                margin: 0px 5px;
+    }
+
+    .info-box {
+        width: calc(80% - 20px);
+        max-width: 48%;
+    }
+}
+
+@@media (min-width: 800px){
+        .titulo-catalogo {
+            display: none;
+        }
+}
+
+@@media (min-width: 1000px)
+{
+
+        .body-catalogo {
+            min-height: 100px;
+            overflow-x: hidden;
+            width: 100vw;
+        }
+
+        .container {
+            grid-gap: 70px;
+
+            justify-content: center;
+
+            min-width: 70vw;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .opcoes-admin {
+            display: block;
+        }
+
+        .titulo-catalogo 
+        {
+            display: none;
+        }
+}
+
+
+</style>
+
+<div class="body-catalogo">
+
+
+
+<div class="container">
+
+        <div class="titulo-catalogo">
+            <h1>Ongs</h1>
+            <hr />
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="image-container">
+@*                <img src="~/img/logo_ol.png" alt="Imagem 1" class="image">*@
+                <a asp-action="Details" asp-route-id="@item.Id"><img src="~/img/logo_ol.png" alt="Imagem 1" class="image"></a>
+            <div class="info-box">
+
+                    <p class="image-info">@item.Nome</p>
+
+                    <div class="ong-info">
+                        <p>Quant empregados: @item.QuantidadeEmpregados</p>
+                        @if (@item.Endereco != null)
+                        {
+                            <p><i class="fa-solid fa-location-dot"></i> @item.Endereco.Cidade - @item.Endereco.Estado</p>
+                        }
+                        <p><i class="fa-solid fa-filter"></i> @item.AreaAtuacao</p>
+                    </div>
+
+                    <div class="opcoes-admin" style="margin-top:10px">
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i></a> |
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a> |
+                    </div>
+            </div>
+           
+            </div>
+        }
+
+
+</div>
+
+</div>

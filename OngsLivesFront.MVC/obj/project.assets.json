@@ -10385,11 +10385,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\gsgomes\\__codigos\\linguagens\\csharp\\2023\\Github_OL_Front_Alone_23_05_net6\\OngsLivesFront.MVC\\OngsLivesFront.MVC\\OngsLivesFront.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel Gomes\\Desktop\\front_ol_git\\ol_front_ol\\ongslivesfrontend\\OngsLivesFront.MVC\\OngsLivesFront.MVC.csproj",
       "projectName": "OngsLivesFront.MVC",
-      "projectPath": "F:\\gsgomes\\__codigos\\linguagens\\csharp\\2023\\Github_OL_Front_Alone_23_05_net6\\OngsLivesFront.MVC\\OngsLivesFront.MVC\\OngsLivesFront.MVC.csproj",
+      "projectPath": "C:\\Users\\Gabriel Gomes\\Desktop\\front_ol_git\\ol_front_ol\\ongslivesfrontend\\OngsLivesFront.MVC\\OngsLivesFront.MVC.csproj",
       "packagesPath": "C:\\Users\\Gabriel Gomes\\.nuget\\packages\\",
-      "outputPath": "F:\\gsgomes\\__codigos\\linguagens\\csharp\\2023\\Github_OL_Front_Alone_23_05_net6\\OngsLivesFront.MVC\\OngsLivesFront.MVC\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel Gomes\\Desktop\\front_ol_git\\ol_front_ol\\ongslivesfrontend\\OngsLivesFront.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriel Gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10456,7 +10456,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }

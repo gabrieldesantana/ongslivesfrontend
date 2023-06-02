@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ONGLIVES.API.Entidades;
 using ONGLIVES.API.Persistence.Context;
+using OngsLivesFront.MVC.API.Interfaces;
 using OngsLivesFront.MVC.Filters;
+using OngsLivesFront.MVC.Models;
 
 namespace OngsLivesFront.MVC.Controllers
 {
@@ -15,31 +12,40 @@ namespace OngsLivesFront.MVC.Controllers
     [PaginaParaUsuarioLogado]
     public class VagasController : Controller
     {
-        private readonly OngLivesContext _context;
+        private readonly IVagaAPI _vagaAPI;
 
-        public VagasController(OngLivesContext context)
+        private readonly IOngAPI _ongAPI;
+
+        public VagasController(IVagaAPI vagaAPI, IOngAPI ongAPI)
         {
-            _context = context;
+            _vagaAPI = vagaAPI;
+            _ongAPI = ongAPI;
         }
 
-        // GET: Vagas
         public async Task<IActionResult> Index()
         {
-              return _context.TB_Vagas != null ? 
-                          View(await _context.TB_Vagas.ToListAsync()) :
-                          Problem("Entity set 'OngLivesContext.Vagas'  is null.");
-        }
-
-        // GET: Vagas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.TB_Vagas == null)
+            try
             {
-                return NotFound();
+                var vagas = await _vagaAPI.GetVagas();
+                return View(vagas);
+            }
+            catch (Exception)
+            {
+
+                return Problem(" Erro 500: Favor contactar o Administrador do Sistema");
             }
 
-            var vaga = await _context.TB_Vagas
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var vaga = await _vagaAPI.GetVaga(id);
+
+            var ong = await _ongAPI.GetOng(vaga.IdOng);
+
+            ViewBag.Ong = ong;
+
             if (vaga == null)
             {
                 return NotFound();
@@ -48,52 +54,61 @@ namespace OngsLivesFront.MVC.Controllers
             return View(vaga);
         }
 
-        // GET: Vagas/Create
+        public async Task<IActionResult> VagasByOngId([FromRoute]int id)
+        {
+             var ido = id;
+            var ong = await _ongAPI.GetOng(id);
+
+            //var vagas = await _vagaAPI.GetVagas();
+
+            if (ong == null)
+            {
+                return NotFound();
+            }
+
+            //ViewData["OngId"] = 
+
+            return View(ong);
+        }
+
+
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Vagas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdVoluntario,IdOng,Tipo,Turno,Descricao,Habilidade,DataInicio,DataFim,Id")] Vaga vaga)
+        public async Task<IActionResult> Create(Vaga vaga)
         {
             if (ModelState.IsValid)
             {
-                vaga.Actived = true;
-                vaga.CriadoEm = DateTime.Now;
-                _context.Add(vaga);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                await _vagaAPI.CreateVaga(vaga);
+
+                return RedirectToAction("Index", "Home");
             }
+
             return View(vaga);
         }
 
-        // GET: Vagas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null || _context.TB_Vagas == null)
-            {
-                return NotFound();
-            }
+            var vaga = await _vagaAPI.GetVaga(id);
 
-            var vaga = await _context.TB_Vagas.FindAsync(id);
             if (vaga == null)
             {
                 return NotFound();
             }
+
             return View(vaga);
         }
 
-        // POST: Vagas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdVoluntario,IdOng,Tipo,Turno,Descricao,Habilidade,DataInicio,DataFim,CriadoEm,Id,Actived")] Vaga vaga)
+        public async Task<IActionResult> Edit(int id, Vaga vaga)
         {
             if (id != vaga.Id)
             {
@@ -102,37 +117,17 @@ namespace OngsLivesFront.MVC.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(vaga);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!VagaExists(vaga.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                await _vagaAPI.UpdateVaga(vaga);
+                return RedirectToAction("Index");
             }
+
             return View(vaga);
         }
 
-        // GET: Vagas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null || _context.TB_Vagas == null)
-            {
-                return NotFound();
-            }
+            var vaga = await _vagaAPI.GetVaga(id);
 
-            var vaga = await _context.TB_Vagas
-                .FirstOrDefaultAsync(m => m.Id == id);
             if (vaga == null)
             {
                 return NotFound();
@@ -141,28 +136,12 @@ namespace OngsLivesFront.MVC.Controllers
             return View(vaga);
         }
 
-        // POST: Vagas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TB_Vagas == null)
-            {
-                return Problem("Entity set 'OngLivesContext.Vagas'  is null.");
-            }
-            var vaga = await _context.TB_Vagas.FindAsync(id);
-            if (vaga != null)
-            {
-                _context.TB_Vagas.Remove(vaga);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool VagaExists(int id)
-        {
-          return (_context.TB_Vagas?.Any(e => e.Id == id)).GetValueOrDefault();
+            await _vagaAPI.DeleteVaga(id);
+            return RedirectToAction("Index");
         }
     }
 }

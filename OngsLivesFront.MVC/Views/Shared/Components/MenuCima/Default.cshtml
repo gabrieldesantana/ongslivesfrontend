@@ -1,10 +1,52 @@
-﻿@model Usuario
+﻿@model CadastroModel
 
 <header class="cabeca">
     <nav class="cabecaEsquerda">
+        <a href="#" onclick="history.go(-1); return false;" style="font-size:0.7rem"><i class="fa-solid fa-backward"></i></a>
     </nav>
     <nav class="cabecaDireita">
-        <a class="centralCliente" asp-controller="Home" asp-action="Index">@Model.Nome</a>
-        <a class="centralCliente" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+        
+        @if (Model.Ong.Nome != "Vazio")
+        {
+            @if (Model.Ong.Id != 0)
+            {
+                  <a class="centralCliente" asp-controller="Home" asp-action="Index">Mat: @Model.Ong.Id</a>
+            }
+          
+        }
+
+
+        @if (Model.Voluntario.Nome != "Vazio")
+        {
+            @if (Model.Voluntario.Id != 0)
+            {
+                <a class="centralCliente" asp-controller="Home" style="font-size:0.7rem" asp-action="Index">Mat: @Model.Voluntario.Id</a>
+            }
+            
+        }
+
+
+
+
+        @if (Model.Ong.Nome != "Vazio")
+        {
+            @if (Model.Ong.Id != 0)
+            {
+
+                <a class="centralCliente" style="font-size:0.7rem" asp-controller="Ongs" asp-action="Details" asp-route-id="@Model.Ong.Id"><i class="fa-solid fa-address-card" style="background: rgba(0,0,0,0); color:#000"></i></a>
+            }
+
+        }
+        @if (Model.Voluntario.Nome != "Vazio")
+        {
+            @if (Model.Voluntario.Id != 0)
+            {
+                <a class="centralCliente" style="font-size:0.7rem" asp-controller="Voluntarios" asp-action="Details" asp-route-id="@Model.Voluntario.Id"><i class="fa-solid fa-address-card" style="background: rgba(0,0,0,0); color:#000"></i></a>
+            }
+
+        }
+        <a class="centralCliente" style="font-size:0.7rem" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house" style="background-color: rgba(0,0,0,0); color:#000"></i></a>
+
+        <a class="centralCliente" style="font-size:0.7rem" asp-area="" asp-controller="Login" asp-action="Sair"><i class="fa-solid fa-door-open" style="background-color: rgba(0,0,0,0); color:#000"></i></a>
     </nav>
 </header>

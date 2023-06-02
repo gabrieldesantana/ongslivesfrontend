@@ -1,171 +1,120 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ONGLIVES.API.Entidades;
-using ONGLIVES.API.Persistence.Context;
-using OngsLivesFront.MVC.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using OngsLivesFront.MVC.API;
+using OngsLivesFront.MVC.API.Interfaces;
+using OngsLivesFront.MVC.Models;
 
-namespace OngsLivesFront.MVC.Controllers
+namespace OngsLivesFront.MVC.Controllers;
+
+public class VoluntariosController : Controller
 {
-    //[PaginaRestritaOng]
-    //[PaginaRestritaVoluntario]
-    [PaginaParaUsuarioLogado]
-    public class VoluntariosController : Controller
+    private readonly IVoluntarioAPI _voluntarioAPI;
+    private readonly IUsuarioAPI _usuarioAPI;
+
+    public VoluntariosController(IVoluntarioAPI voluntarioAPI, IUsuarioAPI usuarioAPI)
     {
-        private readonly OngLivesContext _context;
+        _voluntarioAPI = voluntarioAPI;
+        _usuarioAPI = usuarioAPI;
+    }
 
-        public VoluntariosController(OngLivesContext context)
+    public async Task<IActionResult> Index()
+    {
+        try
         {
-            _context = context;
+            var voluntarios = await _voluntarioAPI.GetVoluntarios();
+            return View(voluntarios);
+        }
+        catch (Exception)
+        {
+
+            return Problem(" Erro 500: Favor contactar o Administrador do Sistema");
+        }
+    }
+
+    public IActionResult Perfil(int id)
+    {
+        return View();
+    }
+
+    public async Task<IActionResult> Details(int id)
+    {
+        var voluntario = await _voluntarioAPI.GetVoluntario(id);
+
+        if (voluntario == null)
+        {
+            return NotFound();
         }
 
-        // GET: Voluntarios
-        public async Task<IActionResult> Index()
+        return View(voluntario);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(Voluntario voluntario)
+    {
+        if (ModelState.IsValid)
         {
-              return _context.TB_Voluntarios != null ? 
-                          View(await _context.TB_Voluntarios.ToListAsync()) :
-                          Problem("Entity set 'OngLivesContext.Voluntarios'  is null.");
+            await _voluntarioAPI.CreateVoluntario(voluntario);
+            await _usuarioAPI.UpdateSituationAsync(voluntario.Email);
+
+            return RedirectToAction("Index", "Home");
         }
 
-        // GET: Voluntarios/Details/5
-        public async Task<IActionResult> Details(int? id)
+        return View(voluntario);
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var voluntario = await _voluntarioAPI.GetVoluntario(id);
+
+        if (voluntario == null)
         {
-            if (id == null || _context.TB_Voluntarios == null)
-            {
-                return NotFound();
-            }
-
-            var voluntario = await _context.TB_Voluntarios
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (voluntario == null)
-            {
-                return NotFound();
-            }
-
-            return View(voluntario);
+            return NotFound();
         }
 
-        // GET: Voluntarios/Create
-        public IActionResult Create()
+        return View(voluntario);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, Voluntario voluntario)
+    {
+        if (id != voluntario.Id)
         {
-            return View();
+            return NotFound();
         }
 
-        // POST: Voluntarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,CPF,DataNascimento,Escolaridade,Genero,Email,Telefone,Habilidade,QuantidadeExperiencias,Id")] Voluntario voluntario)
+        if (ModelState.IsValid)
         {
-            if (ModelState.IsValid)
-            {
-                voluntario.Actived= true;
-                voluntario.CriadoEm = DateTime.Now;
-                voluntario.Avaliacao = 5;
-                voluntario.HorasVoluntaria = 0;
-                _context.Add(voluntario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(voluntario);
+            await _voluntarioAPI.UpdateVoluntario(voluntario);
+            return RedirectToAction("Index");
         }
 
-        // GET: Voluntarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.TB_Voluntarios == null)
-            {
-                return NotFound();
-            }
+        return View(voluntario);
+    }
 
-            var voluntario = await _context.TB_Voluntarios.FindAsync(id);
-            if (voluntario == null)
-            {
-                return NotFound();
-            }
-            return View(voluntario);
+    public async Task<IActionResult> Delete(int id)
+    {
+        var voluntario = await _voluntarioAPI.GetVoluntario(id);
+
+        if (voluntario == null)
+        {
+            return NotFound();
         }
 
-        // POST: Voluntarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Nome,CPF,DataNascimento,Escolaridade,Genero,Email,Telefone,Habilidade,Avaliacao,HorasVoluntaria,QuantidadeExperiencias,CriadoEm,Id,Actived")] Voluntario voluntario)
-        {
-            if (id != voluntario.Id)
-            {
-                return NotFound();
-            }
+        return View(voluntario);
+    }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(voluntario);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!VoluntarioExists(voluntario.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(voluntario);
-        }
-
-        // GET: Voluntarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.TB_Voluntarios == null)
-            {
-                return NotFound();
-            }
-
-            var voluntario = await _context.TB_Voluntarios
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (voluntario == null)
-            {
-                return NotFound();
-            }
-
-            return View(voluntario);
-        }
-
-        // POST: Voluntarios/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.TB_Voluntarios == null)
-            {
-                return Problem("Entity set 'OngLivesContext.Voluntarios'  is null.");
-            }
-            var voluntario = await _context.TB_Voluntarios.FindAsync(id);
-            if (voluntario != null)
-            {
-                _context.TB_Voluntarios.Remove(voluntario);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool VoluntarioExists(int id)
-        {
-          return (_context.TB_Voluntarios?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmedAsync(int id)
+    {
+        await _voluntarioAPI.DeleteVoluntario(id);
+        return RedirectToAction("Index");
     }
 }

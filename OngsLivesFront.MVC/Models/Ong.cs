@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace ONGLIVES.API.Entidades
+namespace OngsLivesFront.MVC.Models
 {
     public class Ong : Base
     {
@@ -25,7 +25,16 @@ namespace ONGLIVES.API.Entidades
             QuantidadeEmpregados = quantidadeEmpregados;
             Vagas = new List<Vaga>();
             Financeiros = new List<OngFinanceiro>();
-            Endereco = endereco;
+            Endereco = new Endereco(
+            endereco.EnderecoLinha,
+            endereco.Numero,
+            endereco.Cep,
+            endereco.Bairro,
+            endereco.Cidade,
+            endereco.Estado,
+            endereco.Pais,
+            endereco.Latitude,
+            endereco.Longitude);
             CriadoEm = DateTime.Now;
         }
 

@@ -1,4 +1,5 @@
-namespace ONGLIVES.API.Entidades {
+namespace OngsLivesFront.MVC.Models
+{
 
     public class Base
     {

@@ -1,0 +1,185 @@
+﻿@{
+    Layout = "_NoLayout_Suporte";
+}
+
+   <style>
+
+        @@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            transition: 0.3s;
+            color: #d42f8d
+        }
+
+        body {
+            font-size: 100%;
+            background: linear-gradient(68.15deg, #d37f8d 16.62%, #e65f75 85.61%);
+        }
+
+        .cabecalho {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 24px;
+        }
+
+        .cabecalho-img {
+            height: 72px;
+        }
+
+        .cabecalho-menu {
+            display: flex;
+            gap: 40px;
+
+        }
+
+        .cabecalho-menu-item {
+            font-family: 'Sarala', sans-serif;
+            color: #FFF2E7;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        .conteudo {
+            margin-bottom: 48px;
+            border-top: 0.4px solid #FFF2E7;
+        }
+
+        .conteudo-principal {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px;
+            gap: 100px;
+        }
+
+        .conteudo-principal-escrito {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .conteudo-principal-titulo {
+            font-family: 'Righteous', cursive;
+            font-weight: 400;
+            font-size: 50px;
+            color: #FFF2E7
+        }
+
+
+        .conteudo-cards-principal {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 24px;
+            gap: 12px;
+
+        }
+
+
+        .conteudo-cards {
+            display: flex;
+            flex-direction: column;
+            width: 359.98px;
+            background: #FFFFFF;
+            border: 1px solid #DEDFE4;
+            border-radius: 8px;
+            gap: 24px;
+
+            padding: 10px;
+        }
+
+        .conteudo-cards-titulo {
+            font-family: 'Righteous', cursive;
+            font-weight: 400;
+            font-size: 32px;
+            color: #db6666;
+        }
+
+        .conteudo-cards-assunto {
+            font-family: 'Sarala', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: #db6666;
+        }
+
+
+        .rodape {
+            padding: 32px;
+            border-top: 0.4px solid #FFF2E7;
+        }
+
+        .rodape-imagem {
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+
+    <header class="cabecalho">
+    <img class="cabecalho-img" src="~/img/logo_ol.png" alt="Logo ONGs Lives">
+        <nav class="cabecalho-menu">
+        <a class="cabecalho-menu-item" asp-action="Index">Página Inicial</a>
+        <a class="cabecalho-menu-item" asp-action="Duvidas">Dúvidas ?</a>
+        <a class="cabecalho-menu-item" asp-action="Contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo-principal">
+            <h1 class="conteudo-principal-titulo">Confira algumas dúvidas frequentes</h1>
+        </div>
+        <section class="conteudo-cards-principal">
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">Voluntário? Como se cadastrar !?</h4>
+                <p class="conteudo-cards-assunto">Para se cadastrar como <strong>Voluntário</strong> é só acessar a
+                    <strong>página inicial</strong> e optar por cadastro de volunário.
+                </p>
+            </div>
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">ONG? Como se registrar !?</h4>
+                <p class="conteudo-cards-assunto">Para se registrar como <strong>ONG</strong> é so acessar a
+                    <strong>página inicial</strong> e optar por resgistro de ONGs.
+                </p>
+            </div>
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">Vagas? cadastrar !?</h4>
+                <p class="conteudo-cards-assunto">Para cadastrar uma vaga é so acessar a <strong>página
+                        inicial</strong> e somente sendo uma <strong>ONG</strong> você poderá cadastrar uma vaga.</< /p>
+            </div>
+        </section>
+        <section class="conteudo-cards-principal">
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">Posso excluir meu cadastro de voluntário?</h4>
+                <p class="conteudo-cards-assunto">Ao entrar na <strong>página do voluntário</strong>, estará disponivel a opção de excluir.</p>
+            </div>
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">Após registrado, consigo excluir minha ONG do registro?</h4>
+                <p class="conteudo-cards-assunto">Ao entrar na <strong>página da ONG</strong>, estará disponivel a opção de excluir.</p>
+            </div>
+            <div class="conteudo-cards">
+                <h4 class="conteudo-cards-titulo">A vaga já foi preenchida, tem opção para desativa a vaga?</h4>
+                <p class="conteudo-cards-assunto">No perfil da Ong, na parte de vagas, tem a opção de <strong>desativar a vagas</strong> caso a vaga já tenha sido preenchida.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <img class="rodape-imagem" src="~/img/logo_ol.png" alt="Logo ONGs Lives">
+    </footer>

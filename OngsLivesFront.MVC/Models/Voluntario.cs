@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 
-namespace ONGLIVES.API.Entidades
+namespace OngsLivesFront.MVC.Models
 {
     public class Voluntario : Base
     {
@@ -39,6 +39,7 @@ namespace ONGLIVES.API.Entidades
         }
         
         public string? Nome { get; set; }
+
         public string? CPF { get; set; }
         public DateTime DataNascimento { get; set; }
         public string? Escolaridade { get; set; }

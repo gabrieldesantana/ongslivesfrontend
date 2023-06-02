@@ -1,83 +1,196 @@
-﻿@model ONGLIVES.API.Entidades.Experiencia
+﻿@model Experiencia
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "_Layout_mobile";
 }
 
-<h1>Create</h1>
 
-<h4>Experiencia</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdVoluntario" class="control-label"></label>
-                <input asp-for="IdVoluntario" class="form-control" />
-                <span asp-validation-for="IdVoluntario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdOng" class="control-label"></label>
-                <input asp-for="IdOng" class="form-control" />
-                <span asp-validation-for="IdOng" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeVoluntario" class="control-label"></label>
-                <input asp-for="NomeVoluntario" class="form-control" />
-                <span asp-validation-for="NomeVoluntario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeOng" class="control-label"></label>
-                <input asp-for="NomeOng" class="form-control" />
-                <span asp-validation-for="NomeOng" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjetoEnvolvido" class="control-label"></label>
-                <input asp-for="ProjetoEnvolvido" class="form-control" />
-                <span asp-validation-for="ProjetoEnvolvido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opiniao" class="control-label"></label>
-                <input asp-for="Opiniao" class="form-control" />
-                <span asp-validation-for="Opiniao" class="text-danger"></span>
-            </div>
-@*            <div class="form-group">
-                <label asp-for="DataPostagem" class="control-label"></label>
-                <input asp-for="DataPostagem" class="form-control" />
-                <span asp-validation-for="DataPostagem" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="DataExperienciaInicio" class="control-label"></label>
-                <input asp-for="DataExperienciaInicio" class="form-control" />
-                <span asp-validation-for="DataExperienciaInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataExperienciaFim" class="control-label"></label>
-                <input asp-for="DataExperienciaFim" class="form-control" />
-                <span asp-validation-for="DataExperienciaFim" class="text-danger"></span>
-            </div>
-@*            <div class="form-group">
-                <label asp-for="CriadoEm" class="control-label"></label>
-                <input asp-for="CriadoEm" class="form-control" />
-                <span asp-validation-for="CriadoEm" class="text-danger"></span>
-            </div>*@
-@*            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Actived" /> @Html.DisplayNameFor(model => model.Actived)
-                </label>
-            </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        background: rgb(222, 138, 172);
+    }
+
+    h1 {
+        text-align: center;
+        color: #eee1e1;
+    }
+
+    form {
+        background: rgb(228, 161, 188);
+        margin: auto;
+        max-width: 600px;
+        padding: 25px;
+        border: 1px solid #aaa0a0cb;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    }
+
+    label {
+        display: inline-block;
+        width: 150px;
+    }
+
+    input[type="text"], select, input[type=number] {
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input[type="email"], select {
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(188, 288, 161);
+        color: rgba(20, 20, 20, 0.692);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+        input[type="submit"]:hover {
+            background-color: rgb(161, 288, 228);
+        }
+
+    .cadastrar-btn {
+        display: grid;
+    }
+
+    footer {
+        color: blue;
+        text-align: center;
+        font-style: italic;
+    }
+
+    /* Estilos para o campo CPF */
+    input[type="text"][id="cpf"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+        input[type="text"][id="cpf"]:focus {
+            border-color: #4CAF50;
+        }
+
+        input[type="text"][id="cpf"][required]:invalid {
+            /*border-color: red;*/
+        }
+
+        input[type="text"][id="cpf"]::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]::-moz-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]:-ms-input-placeholder {
+            color: #999;
+        }
+
+        input[type="text"][id="cpf"]:-moz-placeholder {
+            color: #999;
+        }
+
+    /* Aplica a máscara de CPF */
+    input[type="text"][id="cpf"] {
+        letter-spacing: 0.01em;
+    }
+
+        input[type="text"][id="cpf"]::-webkit-outer-spin-button,
+        input[type="text"][id="cpf"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    input[type="text"][id="cpf"] {
+        -moz-appearance: textfield;
+    }
+
+    #opiniao-area {
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10PX;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+        
+</style>
+
+<h1>Experiencia</h1>
+
+
+<form asp-action="Create" asp-controller="Experiencias" id="formExp">
+
+@*    <div class="form-group">
+        <input asp-for="IdVoluntario" class="form-control" placeholder="Matricula Voluntario" />
+        <span asp-validation-for="IdVoluntario" class="text-danger"></span>
     </div>
-</div>
+    <div class="form-group">
+        <input asp-for="IdOng" class="form-control" placeholder="Matricula Ong" />
+        <span asp-validation-for="IdOng" class="text-danger"></span>
+    </div>*@
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="form-group">
+        <input asp-for="NomeVoluntario" class="form-control" placeholder="Nome do Voluntario" />
+        <span asp-validation-for="NomeVoluntario" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="NomeOng" class="form-control" placeholder="Nome da Ong" />
+        <span asp-validation-for="NomeOng" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="ProjetoEnvolvido" class="form-control" placeholder="Projeto" />
+        <span asp-validation-for="ProjetoEnvolvido" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label" style="color:#ddd; font-weight: bold;">Escreva sua opinião</label>
+        <input type="text" asp-for="Opiniao" maxlength="100" minlength="10" class="form-control" id="opiniao-area" />
+        <span asp-validation-for="Opiniao" class="text-danger"></span>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+      @*  <textarea name="comment" form="formExp">Nos conte como foi sua experiência.</textarea>*@
+    </div>
+
+    <div class="form-group">
+        <label style="color:dimgray">Data Inicio</label>
+        <input type="date" asp-for="DataExperienciaInicio" class="form-control" />
+        <span asp-validation-for="DataExperienciaInicio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label style="color:dimgray">Data Fim</label>
+        <input type="date" asp-for="DataExperienciaFim" class="form-control" />
+        <span asp-validation-for="DataExperienciaFim" class="text-danger"></span>
+    </div>
+
+    <div class="cadastrar-btn">
+        <input type="submit" id="btn" value="Cadastrar">
+        
+        <a asp-action="Index" asp-controller="Home" class="btn btn-danger" style="margin-top:10px">Voltar</a>
+    </div>
+</form>

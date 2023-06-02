@@ -1,8 +1,6 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace ONGLIVES.API.Entidades
+namespace OngsLivesFront.MVC.Models
 {
     public class Experiencia : Base
     {
@@ -15,7 +13,8 @@ namespace ONGLIVES.API.Entidades
             string? projetoEnvolvido,
             string? opiniao,
             DateTime dataExperienciaInicio,
-            DateTime dataExperienciaFim)
+            DateTime dataExperienciaFim,
+            int nota)
         {
             NomeVoluntario = nomeVoluntario;
             NomeOng = nomeOng;
@@ -25,6 +24,7 @@ namespace ONGLIVES.API.Entidades
             DataExperienciaInicio = dataExperienciaInicio;
             DataExperienciaFim = dataExperienciaFim;
             CriadoEm = DateTime.Now;
+            Nota = nota;
         }
 
         // public int Id { get; set; }
@@ -37,6 +37,7 @@ namespace ONGLIVES.API.Entidades
         public string? NomeOng { get; set; }
         public string? ProjetoEnvolvido { get; set; }
         public string? Opiniao { get; set; }
+        public int Nota { get; set; }
         public DateTime DataPostagem { get; set; }
         public DateTime DataExperienciaInicio{ get; set; }
         public DateTime DataExperienciaFim { get; set; }

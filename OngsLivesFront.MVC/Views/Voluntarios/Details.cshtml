@@ -1,10 +1,215 @@
-﻿@model ONGLIVES.API.Entidades.Voluntario
+﻿@model Voluntario
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+
+@{
+    Layout = "_Layout_mobile";
+}
+
+@{
+    ViewData["Title"] = "Perfil da Ong";
+}
+
+<style>
+    h1 {
+        text-align:center;
+    }
+
+    .container-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap:20px;
+
+       /* background-color: green;*/
+    }
+
+    .imagem-perfil-container {
+        display: flex;
+        justify-content:center;
+        margin-top:10px;
+
+
+    }
+
+    .imagem-perfil-container img {
+        width: 20vw;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .iframe-mapa {
+        width: 70vw;
+        height: 200px;
+    }
+
+    .botoes-mapa {
+        padding: 5px;
+
+    }
+
+    .map-container {
+        margin-top: 20px;
+    }
+
+
+    .btn-map-android{
+        padding: 10px 20px;
+        min-width: 30px;
+        border: 1px solid rgba(0,0,0,0.5);
+        border-radius:4px;
+        color: rgba(0,0,0,0.6);
+        background-color: greenyellow;
+    }
+    .btn-map-ios {
+        padding: 10px 20px;
+        min-width: 30px;
+        border: 1px solid rgba(0,0,0,0.5);
+        border: 0px;
+        border-radius:4px;
+        color: rgba(0,0,0,0.7);
+        background-color: deepskyblue;
+        margin-left: 10px;
+    }
+
+    @@media (max-width: 770px) {
+        
+    .imagem-perfil-container img {
+        width: 50vw;
+       /* height: 400px;*/
+        border-radius: 5px;
+    }
+    }
+
+</style>
+
+<h1>Perfil</h1>
+
+<div>
+    @*    <h4>Ong</h4>*@
+
+    @if (Model.Genero == "Feminino")
+    {
+        <div class="imagem-perfil-container">
+            <img src="~/img/mulher_3x4.jpg" alt="" />
+        </div>
+    }
+    @if (Model.Genero == "Masculino")
+    {
+        <div class="imagem-perfil-container">
+            <img src="~/img/homem_3x4.jpg" alt="" />
+        </div>
+    }
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Matricula
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome Completo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            CPF
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de Nascimento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            E-mail
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            Escolaridade
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Escolaridade)
+        </dd>
+        <dt class = "col-sm-2">
+            Genero
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt class="col-sm-2">
+            Telefone
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt class="col-sm-2">
+            Habilidade
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Habilidade)
+        </dd>
+
+        <dt class="col-sm-2">
+            Avaliacao
+        </dt>
+        <dd class="col-sm-10">
+            @for (var i = 0; i < (int)Model.Avaliacao; i++)
+            {
+                <i class="fa-solid fa-star estrelas-icone"></i>
+            }
+        </dd>
+
+        <dt class="col-sm-2">
+            HorasVoluntaria
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HorasVoluntaria)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            Quantidade de Experiencias
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuantidadeExperiencias)
+        </dd>
+
+
+    </dl>
+
+    <hr />
+
+<div class="container-perfil">
+
+
+
+</div>
+
+
+
+@*<h1>Details</h1>
 
 <div>
     <h4>Voluntario</h4>
@@ -94,3 +299,4 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+*@
