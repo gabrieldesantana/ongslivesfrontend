@@ -23,7 +23,8 @@ namespace ONGLIVES.API.Persistence.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=GSGOMES-DESKTOP\\SQLEXPRESS;DataBase=DB_OngsLives;Integrated Security=SSPI;TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer("Server=GSGOMES-DESKTOP\\SQLEXPRESS;DataBase=DB_OngsLives;Integrated Security=SSPI;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=sv-ongslives.database.windows.net;DataBase=BD_OngsLives;User Id=ongslivesdba;Password=Ongs0707");
         }
 
 
