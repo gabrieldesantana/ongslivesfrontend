@@ -6,10 +6,16 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
+
 <h1>Usuarios</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-danger" role="button">Cadastrar Usuário</a>
 </p>
 <table class="table">
     <thead>
@@ -57,9 +63,9 @@
                 @Html.DisplayFor(modelItem => item.Actived)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a> |
             </td>
         </tr>
 }

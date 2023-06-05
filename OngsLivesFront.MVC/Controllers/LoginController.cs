@@ -25,10 +25,10 @@ namespace OngsLivesFront.MVC.Controllers
             return View();
         }
 
-        public IActionResult Index2()
-        {
-            return View();
-        }
+        //public IActionResult IndexAdmin()
+        //{
+        //    return View();
+        //}
 
         public IActionResult Sair()
         {

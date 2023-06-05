@@ -85,6 +85,7 @@ namespace OngsLivesFront.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                ong.Endereco.Pais = "Brasil";
                 await _ongAPI.CreateOng(ong);
                 await _usuarioAPI.UpdateSituationAsync(ong.Email);
 

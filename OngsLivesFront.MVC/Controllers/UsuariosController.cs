@@ -50,7 +50,8 @@ namespace OngsLivesFront.MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create2()
+        [PaginaRestritaAdmin]
+        public IActionResult CreateAdmin()
         {
             return View();
         }
