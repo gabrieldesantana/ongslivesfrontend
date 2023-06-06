@@ -25,11 +25,6 @@ namespace OngsLivesFront.MVC.Controllers
             return View();
         }
 
-        //public IActionResult IndexAdmin()
-        //{
-        //    return View();
-        //}
-
         public IActionResult Sair()
         {
             _sessao.RemoverSessaoUsuario();

@@ -154,12 +154,6 @@
             width: calc(80% - 20px);
             max-width: 48%;
         }
-        /*    .image-container {
-            margin: 5px 0;
-        }*/
-        /*    .info-box {
-            max-width: 47.5%;
-        }*/
     }
 
     @@media (min-width: 800px) {
@@ -171,22 +165,12 @@
     @@media (min-width: 1000px) {
 
         .body-catalogo {
-            /*background-color: green;*/
-            /*            margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                justify-content: start;*/
             min-height: 100px;
             overflow-x: hidden;
             width: 100vw;
         }
 
         .container {
-            /*  display: flex;
-                flex-wrap: wrap;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
             grid-gap: 70px;
             justify-content: center;
             /*  margin-top: 20px;*/
@@ -256,85 +240,3 @@
     </div>
 
 </div>
-
-@*<style>
-    h1 {
-        text-align: center;
-        color: rgba(0,0,0,0.7);
-        font-weight: bold;
-    }
-
-    .opcoes-admin {
-        display: none;
-    }
-
-    @@media (min-width: 1000px) {
-            .opcoes-admin {
-                display: block;
-            }
-    }
-</style>
-
-<h1>Voluntarios</h1>*@
-
-@*<p>
-    <a asp-action="Create">Cadastrar-se</a>
-</p>*@
-
-
-@*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>*@
-@*<div class="col-lg-12">*@
-@*
-<div class="table-responsive"> 
-<table class="table display" id="tabelaVoluntario">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Habilidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Avaliacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HorasVoluntaria)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Habilidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avaliacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorasVoluntaria)
-            </td>
-            <td class="opcoes-admin">
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i></a>
-                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a>
-                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
-            </td>
-            <td class="opcoes-usuario">
-                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-</div>*@

@@ -4,6 +4,9 @@
 @{
     Layout = "_Layout_cadastro";
 }
+@{
+    ViewData["Title"] = "Adicionar Usuario";
+}
 
 <style>
     body {
@@ -87,66 +90,29 @@
         text-align: center;
         font-style: italic;
     }
-
-/*    input[type="text"][id="cpf"] {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
-        font-size: 16px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        text-align: left;
-    }*/
-
-/*        input[type="text"][id="cpf"]:focus {
-            border-color: #4CAF50;
-        }
-
-        input[type="text"][id="cpf"][required]:invalid {
-            
-        }*/
-/*
-        input[type="text"][id="cpf"]::-webkit-input-placeholder {
-            color: #999;
-        }
-
-        input[type="text"][id="cpf"]::-moz-placeholder {
-            color: #999;
-        }
-
-        input[type="text"][id="cpf"]:-ms-input-placeholder {
-            color: #999;
-        }
-
-        input[type="text"][id="cpf"]:-moz-placeholder {
-            color: #999;
-        }
-
-    input[type="text"][id="cpf"] {
-        letter-spacing: 0.01em;
-    }
-
-        input[type="text"][id="cpf"]::-webkit-outer-spin-button,
-        input[type="text"][id="cpf"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-    input[type="text"][id="cpf"] {
-        -moz-appearance: textfield;
-    }
-
-    #email-validation::before {
-        content: "✘";
-        color: red;
-        margin-left: -150px;
-    }
-
-    #email-validation.valid::before {
-        content: "✔";
+        .button-33 {
+        background-color: #c2fbd7;
+        border-radius: 100px;
+        box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
         color: green;
-    }*/
+        cursor: pointer;
+        display: inline-block;
+ /*       font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;*/
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: 0;
+        font-size: 16px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .button-33:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
 </style>
 
 
@@ -193,7 +159,7 @@
 
      <div class="form-group">
         <div class="cadastrar-btn">
-            <input type="submit" id="btn" value="Cadastrar">
+            <input type="submit" id="btn" class="button-33" value="Cadastrar">
         </div>
      </div>
 

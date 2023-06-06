@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OngsLivesFront.MVC</title>
+    <title>@ViewData["Title"] - OngsLives</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -58,7 +58,7 @@ header{
 }
 
 .cabecaEsquerda a{
-    background-color: #a9fbb1;  
+   /* background-color: #a9fbb1;  */
     text-decoration: none;
     padding: 8.5px;
     padding-right: 15px;
@@ -69,7 +69,7 @@ header{
 
     border-radius: 4px;
     margin: 5px;
-    padding: 5px 10px;
+/*    padding: 5px 10px;*/
 }
 
 .cabecaDireita{
@@ -93,7 +93,7 @@ header{
 
 .centralCliente{
     color: black;
-    background-color: #a9fbb1;
+/*    background-color: #a9fbb1;*/
     text-decoration: none;
     padding: 5px;
     padding-left: 20px;
@@ -104,8 +104,6 @@ header{
 .cabecaDireita i{
     background-color: black;
     color: white;
-    padding: 9px;
-    padding-top: 10px;    
 }
 
 .linha2{
@@ -323,14 +321,6 @@ header{
 {
     body {
     margin-bottom: 10px;
-/*    background-image: url('../img/background_home.png');
-    background-size: cover;
-
-    background-repeat: no-repeat;
-    background-position: center;
-                background-position: center top 50px;
-
-    background: #DA7485;*/
     height: 50vh;
 }
 
@@ -429,10 +419,6 @@ header{
     .linha3 a {
         width: 80px;
         height: 80px;
-    /*    padding: 20px 20px;*/
-        /*background-color: #e21;*/
-
-        /*border-radius: 4px;*/
         border-radius: 50%;
         position: absolute;
 
@@ -453,7 +439,7 @@ header{
     }
 
 
-    .linha3 a:nth-child(2) 
+  /*  .linha3 a:nth-child(2) 
     {
         top: 100px;
         left: 15vw;
@@ -500,7 +486,7 @@ header{
         right: 38vw;
         background-color: #BD4D9E;
     }
-
+*/
     .background-gif {
         display: none;
         
@@ -535,6 +521,26 @@ header{
   to { transform: rotate(360deg); }
 }
 
+        .button-33 {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .button-33:hover {
+                box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+                transform: scale(1.05) rotate(-1deg);
+            }
 
 </style>
 
@@ -548,24 +554,6 @@ header{
     </div>
 
     @await Component.InvokeAsync("MenuCima")
-@*    <div class="linha2">
-
-        <div class="suporte">
-            <i class="fa-solid fa-file-pen"></i>
-            <a asp-controller="Suporte" asp-action="Index" target="_blank" class="opcoes" style="color:#000"> SUPORTE</a>
-        </div>
-
-        <div class="mensagem">
-            <i class="fa-solid fa-bell"></i>
-            <a href="" class="opcoes" style="color:#000"> MENSAGENS</a>
-        </div>
-
-        <div class="chat">
-            <i class="fa-solid fa-comments"></i>
-            <a href="" class="opcoes" style="color:#000"> CHAT</a>
-        </div>
-
-    </div>*@
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -573,8 +561,6 @@ header{
         </main>
     </div>
 
-@*    <footer class="pe">
-    </footer>*@
 
      <script src="https://kit.fontawesome.com/c2daddfa23.js" crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

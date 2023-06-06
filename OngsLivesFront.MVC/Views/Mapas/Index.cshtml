@@ -3,6 +3,9 @@
 @{
     Layout = "_Layout_mobile";
 }
+@{
+    ViewData["Title"] = "Mapa";
+}
 
 
 
@@ -59,7 +62,7 @@
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 12,
-                center: { lat: -10.9346211, lng: -37.0704384 } // Defina o centro do mapa de acordo com suas necessidades
+                center: { lat: -10.9346211, lng: -37.0704384 }
             });
 
             var nomesList = [];

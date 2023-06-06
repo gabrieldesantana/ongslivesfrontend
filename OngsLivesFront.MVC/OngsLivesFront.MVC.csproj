@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Voluntarios1Controller.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Ongs\Index_new.cshtml" />
     <Content Remove="wwwroot\css\home.css.txt" />
     <Content Remove="wwwroot\css\layout1.css.txt" />
   </ItemGroup>

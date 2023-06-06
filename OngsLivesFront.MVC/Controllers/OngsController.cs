@@ -33,7 +33,6 @@ namespace OngsLivesFront.MVC.Controllers
             }
         }
 
-        //public async Task<IActionResult> Perfil([FromRoute] int iditem)
         public async Task<IActionResult> Perfil(int id)
         {
             try
@@ -46,19 +45,6 @@ namespace OngsLivesFront.MVC.Controllers
                 return Problem(" Erro 500: Favor contactar o Administrador do Sistema");
             }
         }
-
-        //public async Task<IActionResult> Index_new()
-        //{
-        //    try
-        //    {
-        //        var ongs = await _ongAPI.GetOngs();
-        //        return View(ongs);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return Problem(" Erro 500: Favor contactar o Administrador do Sistema");
-        //    }
-        //}
 
         public async Task<IActionResult> Details(int id)
         {

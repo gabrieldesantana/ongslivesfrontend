@@ -3,6 +3,9 @@
 @{
     Layout = "_NoLayout";
 }
+@{
+    ViewData["Title"] = "Login";
+}
 
 <style>
 
@@ -30,10 +33,6 @@
     }
 
     .header {
-        /* width: 100vw;
-        height: 30px;
-        background-color:#515151; */
-        /* position: relative; */
     }
 
         .header .barra {
@@ -80,31 +79,21 @@
 
         .input-group1 .input {
             padding: 10px 8px;
-            border-radius: 20px;
             border: none;
-            background-color: #666666;
-            background-color: #80FF8C;
             text-align: center;
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
         }
 
-            .input-group1 .input::placeholder {
-                color: #fff;
-                color: rgba(0,0,0,0.9);
-            }
+        .input-group1 .input::placeholder {
+            color: green;
+        }
 
         .input-group1 a {
             display: block;
             font-size: 12px;
-        }
-
-        .input-group1::before {
-            content: attr(placeholder);
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(0, -50%);
-            color: #ee0e0e;
-            pointer-events: none;
         }
 
     .container-ongs-lives-login form .button-group {
@@ -159,6 +148,31 @@
     }
 
 
+    .button-33 {
+        background-color: #c2fbd7;
+        border-radius: 100px;
+        box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+        color: green;
+        cursor: pointer;
+        display: inline-block;
+        font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: 0;
+        font-size: 16px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .button-33:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+
 
 </style>
 
@@ -190,7 +204,7 @@
 
     <form asp-controller="Login" asp-action="Entrar">
         <div class="input-group1">
-            <input class="input" type="text" asp-for="UsuarioLogin" id="username" placeholder="Usuário" required>
+            <input class="input" type="text" asp-for="UsuarioLogin" id="username" placeholder="Usuário" required autocomplete="off">
             @Html.ValidationMessageFor(x => x.UsuarioLogin)
             <input class="input" type="password" asp-for="UsuarioSenha" id="password" placeholder="Senha" required>
             @Html.ValidationMessageFor(x => x.UsuarioSenha)
@@ -198,7 +212,7 @@
         </div>
 
         <div class="button-group">
-            <button type="submit" class="btn">Entrar</button>
+            <button type="submit" class="btn button-33">Entrar</button>
            @* <a asp-area="" asp-controller="Home" asp-action="Index" class="btn">Entrar</a>*@
             <a asp-action="Create" asp-controller="Usuarios" class="link-login">Cadastra-se agora</a>
         </div>
